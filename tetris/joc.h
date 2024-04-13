@@ -3,6 +3,12 @@
 #include "figura.h"
 #include "tauler.h"
 
+typedef enum
+{
+GIR_HORARI = 0,
+GIR_ANTI_HORARI
+} DireccioGir;
+
 Class Joc
 {
 public:
@@ -21,7 +27,6 @@ private:
 	//coses nostres aquí
 	int m_puntuacio;
 	int m_nivell;
-	
 }
 
 
