@@ -6,13 +6,13 @@
 Class Joc
 {
 public:
+        //interfície pública obligatòria 
 	void inicialitza(const string& nomFitxer);
 	bool giraFigura(DireccioGir direccio);
 	bool mouFigura(int dirX);
 	int baixaFigura();
 	void escriuTauler(const string& nomFitxer);
-	//funcions nostres a partir d'aquí: qualsevol funció més que veiem útil o bona addició al programa (funcionalitats extra pugen nota)
-	//això ho implementem després de tenir el joc bàsic programat
+	//funcions nostres a partir d'aquí
 	void incrementaPuntuacio();
 	void incrementaNivell();
 private:
