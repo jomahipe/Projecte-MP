@@ -1,5 +1,7 @@
 #ifndef JOC_H
 #define JOC_H
+#include "figura.h"
+#include "tauler.h"
 
 Class Joc
 {
