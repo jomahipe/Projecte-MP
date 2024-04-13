@@ -19,8 +19,8 @@ private:
 	Tauler m_tauler;
 	Figura m_figura;
 	//coses nostres aquí
-	int puntuacio;
-	int nivell;
+	int m_puntuacio;
+	int m_nivell;
 	
 }
 
