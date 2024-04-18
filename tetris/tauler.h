@@ -9,7 +9,6 @@ class Tauler
 {
 public:
 	void eliminaFila();
-	bool 
 private:
   ColorFigura m_tauler[N_FILES][N_COLUMNES];
   
