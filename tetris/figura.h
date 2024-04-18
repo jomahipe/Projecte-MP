@@ -30,7 +30,10 @@ NO_COLOR
 class Figura
 {
 public:
-
+	bool giraFigura(DireccioGir direccio);
+	bool mouFigura(int dirX);
+	void baixaFigura();
+	TipusFigura getTipusFigura() { return m_tipusFigura; }
 private:
   TipusFigura m_tipusFigura;
   ColorFigura m_colorFigura;
