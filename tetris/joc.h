@@ -21,6 +21,7 @@ public:
 	//funcions nostres a partir d'aquí
 	void incrementaPuntuacio();
 	void incrementaNivell();
+	void eliminaFila(); //com a nota, el tipus de retorn pot variar si decidim que hi ha una alternativa millor
 private:
 	Tauler m_tauler;
 	Figura m_figura;
