@@ -9,7 +9,7 @@ GIR_HORARI = 0,
 GIR_ANTI_HORARI
 } DireccioGir;
 
-Class Joc
+class Joc
 {
 public:
         //interfície pública obligatòria 
