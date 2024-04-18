@@ -27,7 +27,7 @@ COLOR_VERD,
 NO_COLOR
 } ColorFigura;
 
-Class Figura
+class Figura
 {
 public:
 
