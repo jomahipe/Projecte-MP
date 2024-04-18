@@ -13,10 +13,10 @@ class Joc
 {
 public:
         //interfície pública obligatòria 
-	void inicialitza(const string& nomFitxer);
+	void inicialitza(const string& nomFitxer); //ifstream requerit
 	bool giraFigura(DireccioGir direccio);
 	bool mouFigura(int dirX);
-	int baixaFigura();
+	void baixaFigura();
 	void escriuTauler(const string& nomFitxer);
 	//funcions nostres a partir d'aquí
 	void incrementaPuntuacio();
