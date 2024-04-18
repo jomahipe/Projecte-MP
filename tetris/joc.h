@@ -2,6 +2,7 @@
 #define JOC_H
 #include "figura.h"
 #include "tauler.h"
+#include <ifstream>
 
 typedef enum
 {
@@ -13,7 +14,7 @@ class Joc
 {
 public:
         //interfície pública obligatòria 
-	void inicialitza(const string& nomFitxer); //ifstream requerit
+	void inicialitza(const string& nomFitxer);
 	bool giraFigura(DireccioGir direccio);
 	bool mouFigura(int dirX);
 	void baixaFigura();
