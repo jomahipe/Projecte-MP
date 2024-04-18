@@ -9,3 +9,6 @@ moviment és vàlid (no col·lisiona amb altres figures ja col·locades o amb el
 ▪ Guardar l’estat actual del tauler en un fitxer.
 ▪ En aquesta primer versió treballarem sense visualització gràfica. Tindreu un test d’autoavaluació
 a Caronte per poder validar el correcte funcionament de les diferents funcionalitats.
+
+
+NOTA: els canvis als .cpp els fem a la branca cpp fins decidir una interfície pública final a les classes
