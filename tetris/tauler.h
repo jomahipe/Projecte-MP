@@ -8,9 +8,10 @@ const int MAX_COLUMNES;
 class Tauler
 {
 public:
-
+	void eliminaFila();
+	bool 
 private:
-  m_tauler[MAX_FILES][MAX_COLUMNES];
+  ColorFigura m_tauler[N_FILES][N_COLUMNES];
   
 }
 

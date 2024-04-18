@@ -13,7 +13,9 @@ GIR_ANTI_HORARI
 class Joc
 {
 public:
-        //interfície pública obligatòria 
+	//constructor
+	Joc() { m_puntuacio = 0; m_nivell = 0; }
+    //interfície pública obligatòria 
 	void inicialitza(const string& nomFitxer);
 	bool giraFigura(DireccioGir direccio);
 	bool mouFigura(int dirX);
