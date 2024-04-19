@@ -35,8 +35,8 @@ public:
 	void baixaFigura();
 	TipusFigura getTipusFigura() { return m_tipusFigura; }
 private:
-  TipusFigura m_tipusFigura;
-  ColorFigura m_colorFigura;
+	TipusFigura m_tipusFigura;
+	ColorFigura m_colorFigura;
 }
 
 #endif
