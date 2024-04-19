@@ -30,22 +30,20 @@ NO_COLOR
 class Figura
 {
 public:
+	//Constructors, (canviar?)
+	Figura(TipusFigura tipus, ColorFigura color, DireccioGir direccio) { m_tipusFigura = tipus; m_colorFigura = color; m_girActual = direccio; }
+	Figura() { m_tipusFigura = NO_FIGURA; m_colorFigura = NO_COLOR; m_girActual = NOGIR; }
+	
 	bool giraFigura(DireccioGir direccio);
 	bool mouFigura(int dirX);
 	void baixaFigura();
 
-Figura(TipusFigura tipus, ColorFigura color, DireccioGir direccio)
-    : tipusFigura(tipus), tipusColor(color), m_girActual(direccio) {}
-
-Figura()
-    : tipusFigura(NO_FIGURA), tipusColor(NO_COLOR), m_girActual(NOGIR)) {}
-	
-TipusFigura getTipusFigura() { return m_tipusFigura; }
+	TipusFigura getTipusFigura() { return m_tipusFigura; }
 
 private:
   	TipusFigura m_tipusFigura;
   	ColorFigura m_colorFigura;
-DireccioGir m_girActual;
+	DireccioGir m_girActual;
 }
 
 #endif
