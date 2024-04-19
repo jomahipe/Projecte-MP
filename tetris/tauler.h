@@ -8,8 +8,8 @@ const int MAX_COLUMNES;
 class Tauler
 {
 public:
-void eliminaFila();
-void actualitzarTaula(); //he afegit aquesta funcio en cas si eliminem una fila
+   void eliminaFila();
+   void actualitzarTaula(); //he afegit aquesta funcio en cas si eliminem una fila
 private:
  	 ColorFigura m_tauler[N_FILES][N_COLUMNES];
   
