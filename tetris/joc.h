@@ -24,7 +24,11 @@ public:
 	//funcions nostres a partir d'aquí
 	void incrementaPuntuacio();
 	void incrementaNivell();
+
+	bool casellaValida(return false); //aquesta funcio comprova totes les caselles per veure si hi ha un sobrecontacte amb altres caselles	
 	void eliminaFila(); //nota: el tipus de retorn de les nostres funcions pot canviar si decidim que hi ha una alternativa millor
+
+
 private:
 	Tauler m_tauler;
 	Figura m_figura;
