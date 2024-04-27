@@ -7,9 +7,7 @@ void Joc::inicialitza(const string& nomFitxer)
 	fitxer.open(nomFitxer);
 	if (fitxer.is_open())
 	{
-	/*
-	algorisme d'inicialització aquí
-	 */
+	
 	}
 }
 
