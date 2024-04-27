@@ -44,7 +44,6 @@ private:
   	TipusFigura m_tipusFigura;
   	ColorFigura m_colorFigura;
 	DireccioGir m_girActual;
-	int VegadesGir;
 }
 
 #endif
