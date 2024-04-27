@@ -34,6 +34,7 @@ public:
 	bool mouFigura(int dirX);
 	void baixaFigura();
 	TipusFigura getTipusFigura() { return m_tipusFigura; }
+	void inicialitza(TipusFigura tipus, int fila, int columna, DireccioGir gir);
 private:
 	TipusFigura m_tipusFigura;
 	ColorFigura m_colorFigura;
