@@ -17,10 +17,10 @@ public:
 	Joc() { m_puntuacio = 0; m_nivell = 0; }
     //interfície pública obligatòria 
 	void inicialitza(const string& nomFitxer);
+	void escriuTauler(const string& nomFitxer);
 	bool giraFigura(DireccioGir direccio);
 	bool mouFigura(int dirX);
 	void baixaFigura();
-	void escriuTauler(const string& nomFitxer);
 	//funcions nostres a partir d'aquí
 	void incrementaPuntuacio();
 	void incrementaNivell();
