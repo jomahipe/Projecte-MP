@@ -7,7 +7,23 @@ void Joc::inicialitza(const string& nomFitxer)
 	fitxer.open(nomFitxer);
 	if (fitxer.is_open())
 	{
-	
+		// valors de figura que trobarem al fitxer
+		TipusFigura tipusFig;
+		int filaFig, columnaFig;
+		DireccioGir girFig;
+		// la primera fila és el tipus de la figura, posició al tauler i orientació
+		fitxer >> tipusFig >> filaFig >> columnaFig >> girFig;
+		m_figura.inicialitza(tipusFig, filaFig, columnaFig);
+		giraFigura(girFig);
+		// la resta és el propi tauler
+		ColorFigura taulerFitxer;
+		for (int f = 0; f < MAX_FILES; f++)
+		{
+			for (int c = 0; c < MAX_COLUMNES; c++)
+				fitxer >> taulerFitxer[f][c];
+		}
+		m_tauler.(taulerFitxer);
+		fitxer.close();
 	}
 }
 
@@ -15,10 +31,13 @@ void Joc::escriuTauler(const string& nomFitxer)
 {
 	ofstream fitxer;
 	fitxer.open(nomFitxer);
-	if (fitxer.is_open))
+	if (fitxer.is_open())
 	{
-	/*
-	 algorisme d'escriptura aquí
-	 */
+	// escrivim valors de figura
+
+	// escrivim matriu del tauler
+
+
+	fitxer.close();
 	}
 }
