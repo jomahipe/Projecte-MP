@@ -37,7 +37,8 @@ public:
 	
 	// getters:
 	TipusFigura getTipusFigura() { return m_tipusFigura; }	
-
+	int getColumna() { return m_columna; }
+	int getFila() { return m_fila; }
 private:
 	TipusFigura m_tipusFigura;
 	ColorFigura m_colorFigura;
