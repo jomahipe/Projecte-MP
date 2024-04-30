@@ -1,4 +1,4 @@
-#include "figura.h
+#include "figura.h"
 
 void Figura::inicialitza(TipusFigura tipus, int fila, int columna)
 {
