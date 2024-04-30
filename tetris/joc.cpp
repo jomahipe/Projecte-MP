@@ -34,10 +34,40 @@ void Joc::escriuTauler(const string& nomFitxer)
 	if (fitxer.is_open())
 	{
 	// escrivim valors de figura
-
-	// escrivim matriu del tauler
-
+		TipusFigura tipusFig;
+		int filaFig, columnaFig;
+		DireccioGir girFig;
+		tipusFig = m_figura.getTipusFigura();
+		filaFig = m_figura.getFila();
+		columnaFig = m_figura.getColumna();
+		girFig = m_figura.getGir();
+		fitxer << tipusFig << filaFig << columnaFig << girFig;
+	
+	// escrivim tauler
+		for (int f = 0; f < MAX_FILES; f++)
+		{
+			for (int c = 0; c < MAX_COLUMNES; c++)
+				fitxer << m_tauler.getValor(f, c);
+		}
 
 	fitxer.close();
 	}
 }
+
+
+bool Joc::giraFigura(DireccioGir direccio)
+{
+
+}
+
+
+bool Joc::mouFigura(int dirX)
+{
+
+}
+
+int Joc::baixaFigura()
+{
+
+}
+
