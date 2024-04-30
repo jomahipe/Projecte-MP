@@ -39,6 +39,7 @@ public:
 	TipusFigura getTipusFigura() { return m_tipusFigura; }	
 	int getColumna() { return m_columna; }
 	int getFila() { return m_fila; }
+	int getGir();
 private:
 	TipusFigura m_tipusFigura;
 	ColorFigura m_colorFigura;
