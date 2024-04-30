@@ -41,6 +41,8 @@ public:
 private:
 	TipusFigura m_tipusFigura;
 	ColorFigura m_colorFigura;
+	int m_fila;
+	int m_columna;
 	int m_girFigura;
 }
 
