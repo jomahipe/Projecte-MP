@@ -1,6 +1,6 @@
 #include "figura.h
 
-void Figura::inicialitza(TipusFigura tipus, int fila, int columna, DireccioGir gir)
+void Figura::inicialitza(TipusFigura tipus, int fila, int columna)
 {
     
 }
