@@ -22,9 +22,9 @@ public:
 	bool mouFigura(int dirX);
 	void baixaFigura();
 	//funcions nostres a partir d'aquí
-	void incrementaPuntuacio();
-	void incrementaNivell();
-	void eliminaFila(); //nota: el tipus de retorn de les nostres funcions pot canviar si decidim que hi ha una alternativa millor
+	void incrementaPuntuacio() { m_puntuacio++; }
+	void incrementaNivell() { m_nivell++; }
+	void eliminaFila(); //el tipus de retorn de les funcions pot canviar si decidim que hi ha una alternativa millor
 private:
 	Tauler m_tauler;
 	Figura m_figura;
@@ -32,6 +32,3 @@ private:
 	int m_puntuacio;
 	int m_nivell;
 
-
-
-#endif
