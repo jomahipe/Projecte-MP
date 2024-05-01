@@ -54,6 +54,15 @@ void Joc::escriuTauler(const string& nomFitxer)
 	}
 }
 
+bool Joc::colisioFigura(int filaDesti, int colDesti)
+{
+	// comprovem que estigui dintre del tauler
+	bool outOfBounds = ((colDesti >= MAX_COLUMNES || colDesti < 0) || (filaDesti >= MAX_FILES || filaDesti < 0));
+	if (m_tauler.getValor(filaDesti, colDesti) != 0 || outOfBounds)
+		return true;
+	else 
+		return false;	
+}
 
 bool Joc::giraFigura(DireccioGir direccio)
 {
@@ -63,7 +72,16 @@ bool Joc::giraFigura(DireccioGir direccio)
 
 bool Joc::mouFigura(int dirX)
 {
-
+	bool moviment = true;
+	int fila = m_figura.getFila();
+	int col = m_figura.getColumna();
+	if (colisioFigura((fila + dirX), col))
+		moviment = false;
+	if (moviment)
+	{
+		m_figura.moure(dirX);
+	}
+	return moviment;
 }
 
 int Joc::baixaFigura()
