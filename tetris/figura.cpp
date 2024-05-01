@@ -74,8 +74,3 @@ return false;
 }
 }
 
-
-int Figura::getGir()
-{
-    // implementar després de pensar com fer giraFigura
-}
