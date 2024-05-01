@@ -24,8 +24,7 @@ public:
 	//funcions nostres a partir d'aquí
 	void incrementaPuntuacio() { m_puntuacio++; }
 	void incrementaNivell() { m_nivell++; }
-	void eliminaFila(); //el tipus de retorn de les funcions pot canviar si decidim que hi ha una alternativa millor
-	bool colisioFigura(int filaDesti, int colDesti);
+	bool colisioFigura(int filaDesti, int colDesti); // moure a tauler
 private:
 	Tauler m_tauler;
 	Figura m_figura;
