@@ -34,17 +34,16 @@ public:
 	void inicialitza(TipusFigura tipus, int fila, int columna);
 	void moure(int dirX);
 	// getters:
-	TipusFigura getTipusFigura() { return m_tipusFigura; }	
-	int getColumna() { return m_columna; }
-	int getFila() { return m_fila; }
-	int getGir();
+	TipusFigura getTipusFigura() const { return m_tipusFigura; }	
+	int getColumna() const { return m_columna; }
+	int getFila() const { return m_fila; }
+	int getGir() const { return m_girFigura; }
 private:
 	TipusFigura m_tipusFigura;
 	ColorFigura m_colorFigura;
 	int m_fila;
 	int m_columna;
-	int m_girFigura; // <- possiblement faci falta modificar aquest atribut 
-	// corregir si no està ben implementat
+	int m_girFigura; 
 	int m_forma[6][6]; // una vegada decidim que aquesta és la solució final crearem una constant
 }
 
