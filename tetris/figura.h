@@ -31,10 +31,8 @@ class Figura
 {
 public:
 	bool giraFigura(DireccioGir direccio);
-	bool mouFigura(int dirX);
-	void baixaFigura();
 	void inicialitza(TipusFigura tipus, int fila, int columna);
-	
+	void moure(int dirX);
 	// getters:
 	TipusFigura getTipusFigura() { return m_tipusFigura; }	
 	int getColumna() { return m_columna; }
