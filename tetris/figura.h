@@ -37,13 +37,19 @@ public:
 	bool giraFigura(DireccioGir direccio);
 	bool mouFigura(int dirX);
 	void baixaFigura();
-
-	TipusFigura getTipusFigura() { return m_tipusFigura; }
-
+	void inicialitza(TipusFigura tipus, int fila, int columna);
+	
+	// getters:
+	TipusFigura getTipusFigura() { return m_tipusFigura; }	
+	int getColumna() { return m_columna; }
+	int getFila() { return m_fila; }
+	int getGir();
 private:
-  	TipusFigura m_tipusFigura;
-  	ColorFigura m_colorFigura;
-	DireccioGir m_girActual;
+	TipusFigura m_tipusFigura;
+	ColorFigura m_colorFigura;
+	int m_fila;
+	int m_columna;
+	int m_girFigura;
 }
 
 #endif

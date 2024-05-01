@@ -1,3 +1,6 @@
+Branca main, sincronitzada quan hi han canvis estables al codi de la branca dev. 
+Última sincronització amb dev: 30/04/2024
+
 Projecte MP
 
 Primera versió del projecte (3 de maig) : 
@@ -11,4 +14,3 @@ moviment és vàlid (no col·lisiona amb altres figures ja col·locades o amb el
 a Caronte per poder validar el correcte funcionament de les diferents funcionalitats.
 
 
-NOTA: els canvis en proves els farem a la branca dev

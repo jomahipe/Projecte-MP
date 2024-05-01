@@ -11,28 +11,24 @@ GIR_ANTI_HORARI
 } DireccioGir;
 
 class Joc
-{
+
 public:
 	//constructor
 	Joc() { m_puntuacio = 0; m_nivell = 0; }
     //interfície pública obligatòria 
 	void inicialitza(const string& nomFitxer);
+	void escriuTauler(const string& nomFitxer);
 	bool giraFigura(DireccioGir direccio);
 	bool mouFigura(int dirX);
 	void baixaFigura();
-	void escriuTauler(const string& nomFitxer);
 	//funcions nostres a partir d'aquí
-	void incrementaPuntuacio();
-	void incrementaNivell();
-	void actualitzaTauler();
-	void eliminaFila(); //nota: el tipus de retorn de les nostres funcions pot canviar si decidim que hi ha una alternativa millor
+	void incrementaPuntuacio() { m_puntuacio++; }
+	void incrementaNivell() { m_nivell++; }
+	void eliminaFila(); //el tipus de retorn de les funcions pot canviar si decidim que hi ha una alternativa millor
 private:
 	Tauler m_tauler;
 	Figura m_figura;
 	//coses nostres aquí
 	int m_puntuacio;
 	int m_nivell;
-}
 
-
-#endif
