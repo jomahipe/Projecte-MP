@@ -45,7 +45,9 @@ private:
 	ColorFigura m_colorFigura;
 	int m_fila;
 	int m_columna;
-	int m_girFigura;
+	int m_girFigura; // <- possiblement faci falta modificar aquest atribut 
+	// corregir si no està ben implementat
+	int m_forma[6][6]; // una vegada decidim que aquesta és la solució final crearem una constant
 }
 
 #endif
