@@ -1,4 +1,3 @@
-Projecte MP
 Grup inscrit: 451_4. **Nota per a docents de l'assignatura: vam cometre un error a la inscripció, ja que som alumnes del grup 471. El nostre professor ja ha sigut notificat.**
 
 
