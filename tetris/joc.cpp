@@ -63,8 +63,9 @@ bool Joc::giraFigura(DireccioGir direccio)
 	DireccioGir direccioContraria;
 	if (direccio == GIR_HORARI)
 		direccioContraria = GIR_ANTI_HORARI;
-	else direccioContraria = GIR_HORARI;
-	bool girValid = tauler.colisioFigura(m_figura);
+	else 
+		direccioContraria = GIR_HORARI;
+	bool girValid = !tauler.colisioFigura(m_figura);
 	if (!girValid)
 		m_figura.gira(direccioContraria); //desfem gir
 	return girValid;
@@ -74,7 +75,7 @@ bool Joc::giraFigura(DireccioGir direccio)
 bool Joc::mouFigura(int dirX)
 {
 	m_figura.moure(dirX);
-	bool movValid = tauler.colisioFigura(m_figura);
+	bool movValid = !tauler.colisioFigura(m_figura);
 	if (!movValid)
 		m_figura.moure(-dirX);
 	return movValid;
