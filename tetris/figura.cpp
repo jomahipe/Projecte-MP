@@ -57,20 +57,7 @@ bool Figura::giraFigura(direccioGir gir)
 	}
 	
 }
-bool Figura::mouFigura(int dirX)
+void Figura::moure(int dirX)
 {
-if (dirX == 1)
-{
-//hem de moure la figura per la dreta
-//hem de veure si primer es possible el moviment que hem passat com a parametre
-return false;
+	m_columna = m_columna + dirX;
 }
-else
-{
-return false;
-}
-{
-
-}
-}
-

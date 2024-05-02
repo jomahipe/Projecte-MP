@@ -35,6 +35,7 @@ public:
 	void moure(int dirX);
 	// getters:
 	TipusFigura getTipusFigura() const { return m_tipusFigura; }	
+	ColorFigura getColorFigura() const { return m_colorFigura; }
 	int getColumna() const { return m_columna; }
 	int getFila() const { return m_fila; }
 	int getGir() const { return m_girFigura; }
