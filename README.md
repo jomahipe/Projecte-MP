@@ -1,5 +1,5 @@
 Branca main, sincronitzada quan hi han canvis estables al codi de la branca dev. 
-Última sincronització amb dev: 30/04/2024
+Última sincronització amb dev: 30/04/2024. Següent sincronització: 03/05/2024 (entrega 1a versió)
 
 Projecte MP
 
