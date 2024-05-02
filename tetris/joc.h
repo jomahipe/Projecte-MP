@@ -20,7 +20,7 @@ public:
 	void escriuTauler(const string& nomFitxer);
 	bool giraFigura(DireccioGir direccio);
 	bool mouFigura(int dirX);
-	void baixaFigura();
+	int baixaFigura();
 	//funcions nostres a partir d'aquí
 	void incrementaPuntuacio() { m_puntuacio++; }
 	void incrementaNivell() { m_nivell++; }
