@@ -1,0 +1,58 @@
+const int MAX_FILES;
+const int MAX_COLUMNES;
+
+class Tauler
+{
+public:
+	Tauler() { m_tauler[N_FILES][N_COLUMNES] = { {NO_COLOR} }; }
+	Tauler(ColorFigura taulerInput); // constructor que inicialitza el tauler que rep com a paràmetre
+	void eliminaFila();
+	bool filaCompleta(int fila);
+
+	//getters
+	ColorFigura getValor(int fila, int col) { return m_tauler[fila][col]; }
+private:
+	ColorFigura m_tauler[N_FILES][N_COLUMNES];
+
+}
+//dins del metode eliminaFila cridem filaCompleta per cada fila. si en la fila totes les columnes tenen un valor diferent de zero valor!=0, doncs podem eliminar fila
+bool Tauler::filaCompleta(int fila)
+{
+	int j = 0;
+	bool trobat = false;
+	while (j < MAX_COLUMNES && !trobat)
+	{
+		if (m_tauler[fila][j] == 0)
+		{
+			trobat = true;//hem trobat un zero
+		}
+	}
+	return trobat;
+
+
+}
+void Tauler::eliminaFila()
+{
+	bool trobat = false;//la inicialitzem a false, per dir que no esta completa la fila
+	for (int i = 0; i < MAX_FILES; i++)
+	{
+		//fem un for per anar a cada fila del tauler
+
+		if (filaCompleta(i))//true si fila completa, podem eliminar tota la fila i baixar la fila de dalt
+		{
+			for (int j = i; j>0; j--)
+			{
+				for (int w = 0; w < MAX_COLUMNES; w++)
+				{
+					m_tauler[j][w] = m_tauler[j - 1][w];
+				}
+			}
+		}
+
+		//cal posar la primera fila de la taula amb tots zeros ja que hem baixat els valors un cop s'ha eliminat la fila
+		for (int i = 0; i < MAX_COLUMNES; i++)
+		{
+			m_tauler[0][i] = 0;
+		}
+	}
+}
