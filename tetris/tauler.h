@@ -1,5 +1,6 @@
 #ifndef TAULER_H
 #define TAULER_H
+#include "figura.h"
 //codi aqui
 
 const int MAX_FILES;
@@ -12,7 +13,7 @@ public:
 	Tauler(ColorFigura taulerInput); // constructor que inicialitza el tauler que rep com a paràmetre
 	bool filaCompleta();
 	void eliminaFila();
-	
+	bool colisioFigura(Figura f);
 	//getters
 	ColorFigura getValor(int fila, int col) { return int(m_tauler[fila][col]); }
 private:
