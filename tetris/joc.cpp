@@ -60,9 +60,13 @@ void Joc::escriuTauler(const string& nomFitxer)
 bool Joc::giraFigura(DireccioGir direccio)
 {
 	m_figura.gira(direccio); //fem gir
+	DireccioGir direccioContraria;
+	if (direccio == GIR_HORARI)
+		direccioContraria = GIR_ANTI_HORARI;
+	else direccioContraria = GIR_HORARI;
 	bool girValid = tauler.colisioFigura(m_figura);
 	if (!girValid)
-		m_figura.gira(-direccio);
+		m_figura.gira(direccioContraria);
 	return girValid;
 }
 
