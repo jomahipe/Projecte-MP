@@ -10,7 +10,9 @@ class Tauler
 public:
 	Tauler() { m_tauler[N_FILES][N_COLUMNES] = {{NO_COLOR}}; }
 	Tauler(ColorFigura taulerInput); // constructor que inicialitza el tauler que rep com a paràmetre
-	bool eliminaFila();
+	bool filaCompleta();
+	void eliminaFila();
+	
 	//getters
 	ColorFigura getValor(int fila, int col) { return int(m_tauler[fila][col]); }
 private:
