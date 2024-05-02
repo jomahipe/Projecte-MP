@@ -76,9 +76,8 @@ bool Joc::mouFigura(int dirX)
 	return movValid;
 }
 
-void Joc::baixaFigura()
+int Joc::baixaFigura()
 {
-	if (colisioFigura(m_figura))
-
+//ACABAR	
 }
 
