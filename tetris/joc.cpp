@@ -68,7 +68,11 @@ bool Joc::colisioFigura(int filaDesti, int colDesti)
 
 bool Joc::giraFigura(DireccioGir direccio)
 {
-
+	m_figura.gira(direccio); //fem gir
+	bool girValid = tauler.colisioFigura(m_figura);
+	if (!girValid)
+		m_figura.gira(-direccio);
+	return girValid;
 }
 
 
@@ -88,6 +92,7 @@ bool Joc::mouFigura(int dirX)
 
 void Joc::baixaFigura()
 {
+	if (colisioFigura(m_figura))
 
 }
 
