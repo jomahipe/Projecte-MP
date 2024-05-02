@@ -34,6 +34,7 @@ public:
 	void inicialitza(TipusFigura tipus, int fila, int columna);
 	void moure(int dirX);
 	// getters:
+	int getMatriuFigura();
 	TipusFigura getTipusFigura() const { return m_tipusFigura; }	
 	ColorFigura getColorFigura() const { return m_colorFigura; }
 	int getColumna() const { return m_columna; }
@@ -45,7 +46,6 @@ private:
 	int m_fila;
 	int m_columna;
 	int m_girFigura; 
-	int m_forma[6][6]; // una vegada decidim que aquesta és la solució final crearem una constant
 }
 
 #endif
