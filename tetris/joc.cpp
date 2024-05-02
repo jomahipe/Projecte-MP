@@ -62,7 +62,7 @@ bool Joc::giraFigura(DireccioGir direccio)
 	m_figura.gira(direccio); //fem gir
 	bool girValid = tauler.colisioFigura(m_figura);
 	if (!girValid)
-		m_figura.gira(-direccio);
+		m_figura.gira(-direccio); //desfem gir si no és vàlid
 	return girValid;
 }
 
