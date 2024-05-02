@@ -20,15 +20,8 @@ public:
 	void escriuTauler(const string& nomFitxer);
 	bool giraFigura(DireccioGir direccio);
 	bool mouFigura(int dirX);
-	int baixaFigura();
-	//funcions nostres a partir d'aquí
-	void incrementaPuntuacio() { m_puntuacio++; }
-	void incrementaNivell() { m_nivell++; }
-	bool colisioFigura(int filaDesti, int colDesti); // moure a tauler
+	int baixaFigura();	
 private:
 	Tauler m_tauler;
 	Figura m_figura;
-	//coses nostres aquí
-	int m_puntuacio;
-	int m_nivell;
 
