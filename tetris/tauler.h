@@ -12,7 +12,7 @@ public:
 	Tauler(ColorFigura taulerInput); // constructor que inicialitza el tauler que rep com a paràmetre
 	bool eliminaFila();
 	//getters
-	ColorFigura getValor(int fila, int col) { return m_tauler[fila][col]; }
+	ColorFigura getValor(int fila, int col) { return int(m_tauler[fila][col]); }
 private:
   	ColorFigura m_tauler[N_FILES][N_COLUMNES];
   
