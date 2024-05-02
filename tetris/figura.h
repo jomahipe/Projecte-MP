@@ -1,7 +1,7 @@
 #ifndef FIGURA_H
 #define FIGURA_H
 //codi aqui
-
+#include "joc.h"
 typedef enum
 {
 NO_FIGURA = 0,
