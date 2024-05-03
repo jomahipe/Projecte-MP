@@ -43,7 +43,7 @@ public:
 	int getFila() const { return m_fila; }
 	int getGir() const { return m_girFigura; }
 	// setters:
-	void setGir();
+	void setGir(int gir);
 private:
 	TipusFigura m_tipusFigura;
 	ColorFigura m_colorFigura;
