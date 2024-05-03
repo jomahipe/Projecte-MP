@@ -33,10 +33,9 @@ void Joc::escriuTauler(const string& nomFitxer)
 	if (fitxer.is_open())
 	{
 	// escrivim valors de figura
-		TipusFigura tipusFig;
-		int filaFig, columnaFig, girFig;
+		int tipusFig, filaFig, columnaFig, girFig;
 
-		tipusFig = m_figura.getTipusFigura();
+		tipusFig = int(m_figura.getTipusFigura());
 		filaFig = m_figura.getFila();
 		columnaFig = m_figura.getColumna();
 		girFig = m_figura.getGir();
