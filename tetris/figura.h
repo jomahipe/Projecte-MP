@@ -37,8 +37,7 @@ public:
 	bool gira(DireccioGir dir);
 	void inicialitza(TipusFigura tipus, int fila, int columna);
 	void mouX(int dirX) { m_fila += dirX; }
-	void mouY(int dirY); //pot ser 1 o -1
-	
+	void baixa();	
 	// getters:
 	TipusFigura getTipusFigura() const { return m_tipusFigura; }	
 	ColorFigura getColorFigura() const { return m_color; }

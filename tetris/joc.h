@@ -11,7 +11,7 @@ GIR_ANTI_HORARI
 } DireccioGir;
 
 class Joc
-
+{
 public:
 	//constructor
 	Joc() { m_puntuacio = 0; m_nivell = 0; }
@@ -25,3 +25,6 @@ private:
 	Tauler m_tauler;
 	Figura m_figura;
 
+}
+
+#endif

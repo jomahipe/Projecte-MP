@@ -80,9 +80,7 @@ bool Joc::mouFigura(int dirX)
 
 int Joc::baixaFigura()
 {
-	m_figura.baixa(1);
-	if (m_tauler.colisioFigura(m_figura))
-		m_figura.baixa(-1);
+	m_figura.baixa();
 	// si no colisiona, 
 	
 	else if (m_tauler.filaCompleta(m_figura.getFila()))
