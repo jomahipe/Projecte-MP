@@ -120,7 +120,7 @@ void inicialitzaMatriu()
 }
 
 
-void getMatriu(ColorFigura matriu[DIM_MAT][DIM_MAT], int& alcada, int& amplada)
+void getMatriu(ColorFigura matriu[DIM_MAT][DIM_MAT]);
 {
 	//copiem matriu
 	for (int f = 0; f < DIM_MAT; f++)
@@ -128,6 +128,5 @@ void getMatriu(ColorFigura matriu[DIM_MAT][DIM_MAT], int& alcada, int& amplada)
 		for (int c = 0; c < DIM_MAT; c++)
 			matriu[f][c] = m_matriu[f][c];
 	}
-	alcada = m_alcada;
-	amplada = m_amplada;
+	
 }
