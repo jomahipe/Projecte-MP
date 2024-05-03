@@ -8,14 +8,12 @@ void Joc::inicialitza(const string& nomFitxer)
 	if (fitxer.is_open())
 	{
 		// valors de figura que trobarem al fitxer
-		TipusFigura tipusFig;
-		int filaFig, columnaFig, girFig;
+			int filaFig, columnaFig, girFig, tipusFig;
 
 		// la primera fila és el tipus de la figura, posició al tauler i orientació
 		fitxer >> tipusFig >> filaFig >> columnaFig >> girFig;
-		m_figura.inicialitza(tipusFig, filaFig, columnaFig);
-		giraFigura(girFig);
-		
+		m_figura.inicialitza(TipusFigura(tipusFig), filaFig, columnaFig);
+		setGir(girFig);		
 		// la resta és el propi tauler
 		ColorFigura taulerFitxer;
 		for (int f = 0; f < MAX_FILES; f++)
