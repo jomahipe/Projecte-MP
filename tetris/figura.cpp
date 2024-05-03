@@ -120,7 +120,7 @@ void inicialitzaMatriu()
 }
 
 
-void getMatriu(ColorFigura matriu[DIM_MAT][DIM_MAT]);
+void Figura::getMatriu(ColorFigura matriu[DIM_MAT][DIM_MAT]);
 {
 	//copiem matriu
 	for (int f = 0; f < DIM_MAT; f++)
@@ -129,4 +129,11 @@ void getMatriu(ColorFigura matriu[DIM_MAT][DIM_MAT]);
 			matriu[f][c] = m_matriu[f][c];
 	}
 	
+}
+
+
+int Figura::getFilaInicial() const
+{
+	if (m_tipusFigura != FIGURA_I)
+		
 }
