@@ -120,14 +120,14 @@ void inicialitzaMatriu()
 void Figura::getMatriu(ColorFigura matriu[DIM_MAT][DIM_MAT]);
 {
 	inicialitzaMatriu();
-	setGir(m_girFigura);
 	//copiem matriu
 	for (int f = 0; f < DIM_MAT; f++)
 	{
 		for (int c = 0; c < DIM_MAT; c++)
 			matriu[f][c] = m_matriu[f][c];
 	}
-	
+		setGir(m_girFigura);
+
 }
 
 
