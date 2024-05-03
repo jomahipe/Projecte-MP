@@ -73,21 +73,39 @@ void Figura::setGir(int gir)
 		gira(GIR_HORARI);
 }
 
-int getMidaMatriu()
-{
-	if (m_tipusFigura == FIGURA_I)
-		return 4;
-	else if (m_tipusFigura == FIGURA_O)
-		return 2;
-	else 
-		return 3;
-}
 
-void inicialitzaMatriu(matriu, mida)
+void inicialitzaMatriu()
 {
 	switch (m_tipusFigura)
 	{
 		case (FIGURA_O):
-		//acabar
+			m_matriu[0][0] = m_matriu[0][1] = m_matriu[1][0] = m_matriu[1][1] = COLOR_GROC;
+			color = COLOR_GROC;
+			break;
+		case (FIGURA_J):
+			m_matriu[0][0] = m_matriu[1][0] = m_matriu[1][1] = m_matriu[1][2] = COLOR_BLAUFOSC;
+			color = COLOR_BLAUFOSC;
+			break;
+		case (FIGURA_L):
+			m_matriu[2][0] = m_matriu[1][0] = m_matriu[1][1] = m_matriu[1][2] = COLOR_TARONJA;
+			color = COLOR_TARONJA;
+			break;
+		case (FIGURA_T):
+			m_matriu[0][1] = m_matriu[1][0] = m_matriu[1][1] = m_matriu[1][2] = COLOR_MAGENTA;
+			color = COLOR_MAGENTA;
+			break;
+		case (FIGURA_S):
+			m_matriu[0][1] = m_matriu[0][2] = m_matriu[1][0] = m_matriu[1][1] = COLOR_VERD;
+			color = COLOR_VERD;
+			break;
+		case (FIGURA_Z):
+			m_matriu[0][0] = m_matriu[0][1] = m_matriu[1][1] = m_matriu[1][2] = COLOR_VERMELL;
+			color = COLOR_VERMELL;
+			break;
+		case (FIGURA_I):
+			m_matriu[1][0] = m_matriu[1][1] = m_matriu[1][2] = m_matriu[1][3] = COLOR_BLAUCEL;
+			color = COLOR_BLAUCEL;
+			break;
 	}
+
 }

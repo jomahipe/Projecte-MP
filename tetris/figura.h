@@ -2,6 +2,7 @@
 #define FIGURA_H
 //codi aqui
 #include "joc.h"
+
 typedef enum
 {
 NO_FIGURA = 0,
@@ -27,11 +28,13 @@ COLOR_VERD,
 NO_COLOR
 } ColorFigura;
 
+const int DIM_MAT = 4;
+
 class Figura
 {
 public:
 	Figura() { m_girFigura = 0;}
-	bool giraFigura(DireccioGir direccio);
+	bool gira(DireccioGir dir);
 	void inicialitza(TipusFigura tipus, int fila, int columna);
 	void mouX(int dirX) { m_fila += dirX; }
 	void mouY(int dirY); //pot ser 1 o -1
@@ -44,20 +47,22 @@ public:
 	int getFila() const { return m_fila; }
 	int getGir() const { return m_girFigura; }
 	
-
 	// setters:
 	void setGir(int gir);
 
 	//matriu
-	int getMatriu();
+	void inicialitzaMatriu();
 private:
 	TipusFigura m_tipusFigura;
 	int m_fila;
 	int m_columna;
 	int m_girFigura; 
 
-	// amplada? alçada?
-	
+	//atributs de la matriu de la figura
+	ColorFigura m_matriu[DIM_MAT][DIM_MAT];
+	ColorFigura color;
+
+
 }
 
 #endif
