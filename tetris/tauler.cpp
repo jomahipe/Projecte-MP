@@ -45,6 +45,7 @@ void Tauler::eliminaFila(int fila)
     {
         for (int c = 0; c < MAX_COLUMNES; c++)
             m_tauler[f][c] = m_tauler[f - 1][c];
+        --f;
     }
 
 }
