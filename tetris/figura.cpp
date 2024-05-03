@@ -7,7 +7,7 @@ void Figura::inicialitza(TipusFigura tipus, int fila, int columna)
     m_columna = columna;
 }
 
-void Figura::giraFigura(DireccioGir gir) {
+void Figura::gira(DireccioGir gir) {
 	
 
 if (m_tipusFigura != NO_FIGURA || m_tipusColor != NO_COLOR) {
@@ -159,3 +159,4 @@ int Figura::getFilaInicial() const
 	//si f es otra cosa tenim un problema ...
 }
 
+int Figura::get

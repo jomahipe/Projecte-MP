@@ -21,17 +21,22 @@ void Tauler::inicialitza(ColorFigura tauler)
 bool Tauler::filaCompleta(int fila)
 {
 	int j = 0;
-	bool trobat = false;
-	while (j < MAX_COLUMNES && !trobat)
+	bool completa = true;
+    if (fila >= MAX_FILES)
+    { 
+        completa = false;
+        goto out;
+    }
+	while (j < MAX_COLUMNES && completa)
 	{
 		if (m_tauler[fila][j] == 0)
 		{
-			trobat = true;//hem trobat un zero
+			completa = false;
 		}
 	}
-	return !trobat;
+    out:
+	return completa;
 }
-
 bool Tauler::filaBuida(int fila)
 {
     bool buida = true;
@@ -58,7 +63,7 @@ void Tauler::eliminaFila(int fila)
 }
 
 
-bool Tauler::colisio(Figura & fig)
+bool Tauler::colisio(Figura fig)
 	{
 		int novaFila = 0;
 		int novaColumna = 0;
@@ -73,7 +78,7 @@ bool Tauler::colisio(Figura & fig)
 		while(i<DIM_MAT&&!trobat){
 			while(j<DIM_MAT&&!trobat){
 				//ara mirem si cada part de la matriu es buida o no, es dir , si te un color o no
-				if (fig.getValor(i, j) != NO_COLOR)//tenim color passe, sino no
+				if (fig.getValors(i, j) != NO_COLOR)//tenim color passe, sino no
 				{
 					int filaTauler = novaFila + i;
 					int columnaTauler = novaColumna + j;
@@ -100,16 +105,13 @@ void Tauler::escriuFigura(Figura fig)
     // i que la figura no pot baixar sense tapar una figura ja fixada al tauler
     ColorFigura matriuFigura[DIM_MAT][DIM_MAT];
     int alcadaFigura, ampladaFigura;
-    fig.getMatriu(matriuFigura, alcadaFigura, ampladaFigura);
+    fig.getMatriu(matriuFigura);
+    fig.getValors(alcadaFigura, ampladaFigura);
     if (fig.getTipusFigura != FIGURA_I)
     {
-        for (int filaTauler = fig.getFila() - (alcada / 2); filaTauler < fig.getFila() + (alcada / 2); filaTauler++)
+        for (int filaTauler = fig.getFilaInicial(); filaTauler < fig.getFilaFinal(); filaTauler++)
         {
-            for (int colTauler = fig.getColumna() - (amplada / 2); colTauler < fig.getColumna() - (amplada / 2); colTauler++)
-
+            for (int colTauler = fig.getColInicial(); colTauler < fig.getColFinal(); )
         }
-
-    }
-    else
 
 }
