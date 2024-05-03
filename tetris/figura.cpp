@@ -119,6 +119,7 @@ void inicialitzaMatriu()
 
 void Figura::getMatriu(ColorFigura matriu[DIM_MAT][DIM_MAT]);
 {
+	inicialitzaMatriu();
 	//copiem matriu
 	for (int f = 0; f < DIM_MAT; f++)
 	{

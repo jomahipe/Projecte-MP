@@ -14,6 +14,7 @@ void Joc::inicialitza(const string& nomFitxer)
 		fitxer >> tipusFig >> filaFig >> columnaFig >> girFig;
 		m_figura.inicialitza(TipusFigura(tipusFig), filaFig, columnaFig);
 		m_figura.setGir(girFig);		
+		m_figura.inicialitzaMatriu();
 		// la resta és el propi tauler
 		ColorFigura taulerFitxer;
 		for (int f = 0; f < MAX_FILES; f++)
