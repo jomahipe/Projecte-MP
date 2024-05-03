@@ -147,6 +147,12 @@ int Figura::getFilaInicial() const
 		if (!trobat) 
 			f++;
 	}	
-	return m_fila - (f + 1);
+	if (f == 0)
+		return (m_fila - 1);
+	else if (f == 1)
+		return m_fila;
+	else if (f == 2)
+		return (m_fila + 1);
+	//si f es otra cosa tenim un problema ...
 }
 
