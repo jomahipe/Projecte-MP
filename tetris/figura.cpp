@@ -7,12 +7,10 @@ void Figura::inicialitza(TipusFigura tipus, int fila, int columna)
     m_columna = columna;
 }
 
-bool Figura::giraFigura(DireccioGir gir) {
-	if (m_tipusFigura == NO_FIGURA || m_tipusColor == NO_COLOR) {
-		return false;
-	}
-	else {
-		// Create a temporary matrix to store the rotated figure
+void Figura::giraFigura(DireccioGir gir) {
+	
+
+if (m_tipusFigura != NO_FIGURA || m_tipusColor != NO_COLOR) {
 		ColorFigura novaMatriu[DIM_MAT][DIM_MAT] = { NO_COLOR };
 		//tant com en el cas horari com anti horari em de fer la matriu transposada
 		for (int i = 0; i < DIM_MAT; i++) {
@@ -41,6 +39,7 @@ bool Figura::giraFigura(DireccioGir gir) {
 					novaMatriu[DIM_MAT - 1 - i][j] = temp;
 			
 		}
+			}
 
 		// Update the original matrix with the rotated matrix
 		for (int i = 0; i < DIM_MAT; i++) {
@@ -48,8 +47,9 @@ bool Figura::giraFigura(DireccioGir gir) {
 				m_matriu[i][j] = novaMatriu[i][j];
 			}
 		}
-		return true;
+		
 	}
+		}
 }
 
 void Figura::mouX(int dirX)
