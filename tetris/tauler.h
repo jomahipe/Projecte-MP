@@ -4,20 +4,21 @@
 //codi aqui
 
 const int MAX_FILES;
-const int MAX_COLUMNES;
+const int MAX_COLUMNES; // hem d'inicialitzar aquests valors!
 
 class Tauler
 {
 public:
 	Tauler() { m_tauler[N_FILES][N_COLUMNES] = {{NO_COLOR}}; }
-	Tauler(ColorFigura taulerInput); // constructor que inicialitza el tauler que rep com a paràmetre
-	bool filaCompleta();
-	void eliminaFila();
+	Tauler(ColorFigura tauler); // constructor que inicialitza el tauler que rep com a paràmetre
+	bool filaCompleta(int fila);
+	void eliminaFila(int fila);
 	bool colisioFigura(Figura f);
 	//getters
 	ColorFigura getValor(int fila, int col) { return int(m_tauler[fila][col]); }
 private:
   	ColorFigura m_tauler[N_FILES][N_COLUMNES];
+	bool filaBuida(int fila);
   
 }
 
