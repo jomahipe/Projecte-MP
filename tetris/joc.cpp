@@ -13,7 +13,7 @@ void Joc::inicialitza(const string& nomFitxer)
 		// la primera fila és el tipus de la figura, posició al tauler i orientació
 		fitxer >> tipusFig >> filaFig >> columnaFig >> girFig;
 		m_figura.inicialitza(TipusFigura(tipusFig), filaFig, columnaFig);
-		setGir(girFig);		
+		m_figura.setGir(girFig);		
 		// la resta és el propi tauler
 		ColorFigura taulerFitxer;
 		for (int f = 0; f < MAX_FILES; f++)
@@ -21,7 +21,7 @@ void Joc::inicialitza(const string& nomFitxer)
 			for (int c = 0; c < MAX_COLUMNES; c++)
 				fitxer >> taulerFitxer[f][c];
 		}
-		m_tauler.(taulerFitxer);
+		m_tauler.inicialitza(taulerFitxer);
 		fitxer.close();
 	}
 }
@@ -80,6 +80,12 @@ bool Joc::mouFigura(int dirX)
 
 int Joc::baixaFigura()
 {
-//ACABAR	
+	m_figura.baixa(1);
+	if (m_tauler.colisioFigura(m_figura))
+		m_figura.baixa(-1);
+	// si no colisiona, 
+	
+	else if (m_tauler.filaCompleta(m_figura.getFila()))
+
 }
 
