@@ -34,7 +34,7 @@ class Figura
 {
 public:
 	Figura() { m_girFigura = 0;}
-	bool gira(DireccioGir dir);
+	void gira(DireccioGir dir);
 	void inicialitza(TipusFigura tipus, int fila, int columna);
 	void mouX(int dirX) { m_fila += dirX; }
 	void baixa();	
