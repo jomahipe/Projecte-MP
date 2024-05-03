@@ -7,56 +7,51 @@ void Figura::inicialitza(TipusFigura tipus, int fila, int columna)
     m_columna = columna;
 }
 
-bool Figura::giraFigura(direccioGir gir)
-{
-	if (m_tipusFigura == NO_FIGURA || m_tipusColor == NO_COLOR)
-	{
+bool Figura::giraFigura(DireccioGir gir) {
+	if (m_tipusFigura == NO_FIGURA || m_tipusColor == NO_COLOR) {
 		return false;
 	}
-	else
-	{
-		int novaForma[6][6] = { 0 };//creem aquesta variable per guardar temporalment els canvis realitzades en la figura actual
-		int intercanvi[6][6] = { 0 };//aquesta matriu es fara servir quan hem de realitzar columnes invertides i files invertides
-		//en qualsevol cas necessitem la transposada
-		for (int i = 0; i < 6; i++)
-		{
-			for (int j = 0; j < 6; j++)
-			{
-				novaForma[i][j] = m_forma[i][j];
+	else {
+		// Create a temporary matrix to store the rotated figure
+		ColorFigura novaMatriu[DIM_MAT][DIM_MAT] = { NO_COLOR };
+		//tant com en el cas horari com anti horari em de fer la matriu transposada
+		for (int i = 0; i < DIM_MAT; i++) {
+			for (int j = 0; j < DIM_MAT; j++) {
+				novaMatriu[j][i] = m_matriu[i][j];
 			}
 		}
-		if (direccio == GIR_HORARI)
-		{
-			for (int j = 0; i < 6; i++)
-			{ //invertim columnes;
-				for (int j = 0; j < 6; j++)
-				{
-					intercanvi[i][j] = novaForma[i][5-j];
+		// Rotate the matrix based on the direction
+		if (gir == GIR_HORARI) {
+			
+			
+			for (int i = 0; i < DIM_MAT; i++) {
+				for (int j = 0; j < DIM_MAT / 2; j++) {
+					ColorFigura temp = novaMatriu[i][j];
+					novaMatriu[i][j] = novaMatriu[i][DIM_MAT - 1 - j];
+					novaMatriu[i][DIM_MAT - 1 - j] = temp;
 				}
 			}
 		}
-		else if (direccio == ANTI_HORARI)
-		{
-			for (int i = 0; i < 6; i++)
-			{
-				for (int j = 0; j < 6; j++)
-				{
-					intercanvi[i][j] = novaForma[5 - i][j];
-				}
-			}
+		else if (gir == ANTI_HORARI) {
+			
+			for (int i = 0; i < DIM_MAT / 2; i++) {
+				for (int j = 0; j < DIM_MAT; j++) {
+					ColorFigura temp = novaMatriu[i][j];
+					novaMatriu[i][j] = novaMatriu[DIM_MAT- 1 - i][j];
+					novaMatriu[DIM_MAT - 1 - i][j] = temp;
+			
 		}
-		//despres de tot hem de realitzar el intercanvi final
-		for (int i = 0; i < 6; i++)
-		{
-			for (int j = 0; j < 6; j++)
-			{
-				m_forma[i][j] = intercanvi[i][j];
+
+		// Update the original matrix with the rotated matrix
+		for (int i = 0; i < DIM_MAT; i++) {
+			for (int j = 0; j < DIM_MAT; j++) {
+				m_matriu[i][j] = novaMatriu[i][j];
 			}
 		}
 		return true;
 	}
-	
 }
+
 void Figura::mouX(int dirX)
 {
 	m_columna += dirX;
