@@ -80,32 +80,59 @@ void inicialitzaMatriu()
 	{
 		case (FIGURA_O):
 			m_matriu[0][0] = m_matriu[0][1] = m_matriu[1][0] = m_matriu[1][1] = COLOR_GROC;
-			color = COLOR_GROC;
+			m_color = COLOR_GROC;
+			m_alcada = 2;
+			m_amplada = 2;
 			break;
 		case (FIGURA_J):
 			m_matriu[0][0] = m_matriu[1][0] = m_matriu[1][1] = m_matriu[1][2] = COLOR_BLAUFOSC;
-			color = COLOR_BLAUFOSC;
+			m_color = COLOR_BLAUFOSC;
+			m_alcada = 2; 
+			m_amplada = 3;
 			break;
 		case (FIGURA_L):
 			m_matriu[2][0] = m_matriu[1][0] = m_matriu[1][1] = m_matriu[1][2] = COLOR_TARONJA;
-			color = COLOR_TARONJA;
+			m_color = COLOR_TARONJA;
+			m_alcada = 2; 
+			m_amplada = 3;
 			break;
 		case (FIGURA_T):
 			m_matriu[0][1] = m_matriu[1][0] = m_matriu[1][1] = m_matriu[1][2] = COLOR_MAGENTA;
-			color = COLOR_MAGENTA;
+			m_color = COLOR_MAGENTA;
+			m_alcada = 2;
+			m_amplada = 3;
 			break;
 		case (FIGURA_S):
 			m_matriu[0][1] = m_matriu[0][2] = m_matriu[1][0] = m_matriu[1][1] = COLOR_VERD;
-			color = COLOR_VERD;
+			m_color = COLOR_VERD;
+			m_alcada = 2;
+			m_amplada = 3;
 			break;
 		case (FIGURA_Z):
 			m_matriu[0][0] = m_matriu[0][1] = m_matriu[1][1] = m_matriu[1][2] = COLOR_VERMELL;
-			color = COLOR_VERMELL;
+			m_color = COLOR_VERMELL;
+			m_alcada = 2;
+			m_amplada = 3;
 			break;
 		case (FIGURA_I):
 			m_matriu[1][0] = m_matriu[1][1] = m_matriu[1][2] = m_matriu[1][3] = COLOR_BLAUCEL;
-			color = COLOR_BLAUCEL;
+			m_color = COLOR_BLAUCEL;
+			m_alcada = 1;
+			m_amplada = 4;
 			break;
 	}
 
+}
+
+
+void getMatriu(ColorFigura matriu[DIM_MAT][DIM_MAT], int& alcada, int& amplada)
+{
+	//copiem matriu
+	for (int f = 0; f < DIM_MAT; f++)
+	{
+		for (int c = 0; c < DIM_MAT; c++)
+			matriu[f][c] = m_matriu[f][c];
+	}
+	alcada = m_alcada;
+	amplada = m_amplada;
 }

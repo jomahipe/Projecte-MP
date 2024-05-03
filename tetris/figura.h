@@ -40,9 +40,8 @@ public:
 	void mouY(int dirY); //pot ser 1 o -1
 	
 	// getters:
-	int getMatriuFigura();
 	TipusFigura getTipusFigura() const { return m_tipusFigura; }	
-	ColorFigura getColorFigura() const { return m_colorFigura; }
+	ColorFigura getColorFigura() const { return m_color; }
 	int getColumna() const { return m_columna; }
 	int getFila() const { return m_fila; }
 	int getGir() const { return m_girFigura; }
@@ -52,6 +51,7 @@ public:
 
 	//matriu
 	void inicialitzaMatriu();
+	void getMatriu(ColorFigura matriu[DIM_MAT][DIM_MAT], int& alcada, int& amplada);
 private:
 	TipusFigura m_tipusFigura;
 	int m_fila;
@@ -60,7 +60,10 @@ private:
 
 	//atributs de la matriu de la figura
 	ColorFigura m_matriu[DIM_MAT][DIM_MAT];
-	ColorFigura color;
+	ColorFigura m_color;
+	int m_alcada;
+	int m_amplada;
+
 
 
 }
