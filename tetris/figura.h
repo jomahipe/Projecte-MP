@@ -33,7 +33,7 @@ public:
 	Figura() { m_girFigura = 0;}
 	bool giraFigura(DireccioGir direccio);
 	void inicialitza(TipusFigura tipus, int fila, int columna);
-	void mouX(int dirX);
+	void mouX(int dirX) { m_fila += dirX; }
 	void mouY(int dirY); //pot ser 1 o -1
 	
 	// getters:
@@ -49,13 +49,14 @@ public:
 	void setGir(int gir);
 
 	//matriu
-	int getMidaMatriu();
-	int inicialitzaMatriu(ColorFigura matriu[][], int mida);
+	int getMatriu();
 private:
 	TipusFigura m_tipusFigura;
 	int m_fila;
 	int m_columna;
 	int m_girFigura; 
+
+	// amplada? alçada?
 	
 }
 

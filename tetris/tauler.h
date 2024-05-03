@@ -14,6 +14,7 @@ public:
 	bool filaCompleta(int fila);
 	void eliminaFila(int fila);
 	bool colisioFigura(Figura fig);
+	void escriuMatriu(int matriu);
 	//getters
 	ColorFigura getValor(int fila, int col) { return int(m_tauler[fila][col]); }
 private:
