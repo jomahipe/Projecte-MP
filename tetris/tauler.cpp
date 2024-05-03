@@ -1,7 +1,7 @@
 #include "tauler.h"
 
 
-Tauler::Tauler(ColorFigura tauler)
+void Tauler::inicialitza(ColorFigura tauler)
 {
     for (int f = 0; f < MAX_FILES; f++)
     {

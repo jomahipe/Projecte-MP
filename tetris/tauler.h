@@ -10,7 +10,7 @@ class Tauler
 {
 public:
 	Tauler() { m_tauler[N_FILES][N_COLUMNES] = {{NO_COLOR}}; }
-	Tauler(ColorFigura tauler); // constructor que inicialitza el tauler que rep com a paràmetre
+	void inicialitza(ColorFigura tauler); // constructor que inicialitza el tauler que rep com a paràmetre
 	bool filaCompleta(int fila);
 	void eliminaFila(int fila);
 	bool colisioFigura(Figura fig);
