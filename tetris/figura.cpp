@@ -61,3 +61,9 @@ void Figura::moure(int dirX)
 {
 	m_columna = m_columna + dirX;
 }
+
+void Figura::setGir(int gir)
+{
+	for (int i = 0; i < gir; i++)
+		gira(GIR_HORARI);
+}
