@@ -35,6 +35,7 @@ public:
 	void inicialitza(TipusFigura tipus, int fila, int columna);
 	void mouX(int dirX);
 	void mouY(int dirY); //pot ser 1 o -1
+	
 	// getters:
 	int getMatriuFigura();
 	TipusFigura getTipusFigura() const { return m_tipusFigura; }	
@@ -42,14 +43,20 @@ public:
 	int getColumna() const { return m_columna; }
 	int getFila() const { return m_fila; }
 	int getGir() const { return m_girFigura; }
+	
+
 	// setters:
 	void setGir(int gir);
+
+	//matriu
+	int getMidaMatriu();
+	int inicialitzaMatriu(ColorFigura matriu[][], int mida);
 private:
 	TipusFigura m_tipusFigura;
-	ColorFigura m_colorFigura;
 	int m_fila;
 	int m_columna;
 	int m_girFigura; 
+	
 }
 
 #endif

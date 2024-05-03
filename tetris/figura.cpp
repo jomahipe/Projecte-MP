@@ -72,3 +72,22 @@ void Figura::setGir(int gir)
 	for (int i = 0; i < gir; i++)
 		gira(GIR_HORARI);
 }
+
+int getMidaMatriu()
+{
+	if (m_tipusFigura == FIGURA_I)
+		return 4;
+	else if (m_tipusFigura == FIGURA_O)
+		return 2;
+	else 
+		return 3;
+}
+
+void inicialitzaMatriu(matriu, mida)
+{
+	switch (m_tipusFigura)
+	{
+		case (FIGURA_O):
+		//acabar
+	}
+}
