@@ -80,10 +80,26 @@ bool Joc::mouFigura(int dirX)
 
 int Joc::baixaFigura()
 {
+	int nFiles = 0;
 	m_figura.baixa();
-	// si no colisiona, 
-	
-	else if (m_tauler.filaCompleta(m_figura.getFila()))
+	if (m_tauler.colisioFigura(m_figura))
+	{
+		int alcadaFig, ampladaFig;
+		m_tauler.escriuFigura(m_figura);
+		m_figura.getValors(alcadaFig, ampladaFig);
+		// ara toca comprovar totes les files que ocupi la figura
+		for (int f = m_figura.getFilaInicial(); f < f + 3; f++)
+		{	
+			if (m_tauler.filaCompleta(f))
+			{
+				m_tauler.eliminaFila(f);
+				nFiles++;
+			}	
+			
+		}
 
+	}
+	
+	return nFiles;
 }
 
