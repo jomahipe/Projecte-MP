@@ -58,13 +58,41 @@ void Tauler::eliminaFila(int fila)
 }
 
 
-bool colisioFigura(Figura fig)
-{
-    // obtenim la matriu de figura
-    // es recorre la matriu amb el tauler. Xoca?
-    // si hi ha colisio return true
-    // si no, false
-}
+bool Tauler::colisio(Figura & fig)
+	{
+		int novaFila = 0;
+		int novaColumna = 0;
+		bool trobat=false //inicialitzem el boolean trobat a false, es a dir, diem que no hem trobat o detectat colisions
+		novaFila = fig.getFila();
+		novaColumna = fig.getColumna();
+		//arar cal iterar per cada quadrat de la matriu on esta la figura
+		//fem whiles (nomes en detectar una colisio ja es suficient
+		int i = 0;
+		int j = 0;
+		
+		while(i<DIM_MAT&&!trobat){
+			while(j<DIM_MAT&&!trobat){
+				//ara mirem si cada part de la matriu es buida o no, es dir , si te un color o no
+				if (fig.getValor(i, j) != NO_COLOR)//tenim color passe, sino no
+				{
+					int filaTauler = novaFila + i;
+					int columnaTauler = novaColumna + j;
+					if ((filaTauler < 0 && filaTauler > MAX_FILES) && (columnaTauler<0 && columnaTauler>MAX_COLUMNES))
+					{
+						//estem fora dels limits
+						trobat = true;
+					}
+					if (m_tauler[novaFila][novaColumna] != NO_COLOR)
+					{
+						//en aquesta posicio ja existeix una altre figura
+						trobat = true;
+					}
+				}
+			}
+		}
+		return trobat;
+		
+	}
 
 void Tauler::escriuFigura(Figura fig)
 {
