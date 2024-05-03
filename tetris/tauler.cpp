@@ -61,5 +61,20 @@ bool colisioFigura(Figura fig)
 
 void Tauler::escriuFigura(Figura fig)
 {
-    
+    // per a aquest mètode suposem que ja hem fet comprovacions
+    // i que la figura no pot baixar sense tapar una figura ja fixada al tauler
+    ColorFigura matriuFigura[DIM_MAT][DIM_MAT];
+    int alcadaFigura, ampladaFigura;
+    fig.getMatriu(matriuFigura, alcadaFigura, ampladaFigura);
+    if (fig.getTipusFigura != FIGURA_I)
+    {
+        for (int filaTauler = fig.getFila() - (alcada / 2); filaTauler < fig.getFila() + (alcada / 2); filaTauler++)
+        {
+            for (int colTauler = fig.getColumna() - (amplada / 2); colTauler < fig.getColumna() - (amplada / 2); colTauler++)
+
+        }
+
+    }
+    else
+
 }
