@@ -57,10 +57,7 @@ void Figura::mouX(int dirX)
 	m_columna += dirX;
 }
 
-void Figura::mouY(int dirY)
-{
-	m_fila += dirY;
-}
+
 
 void Figura::setGir(int gir)
 {
@@ -134,6 +131,22 @@ void Figura::getMatriu(ColorFigura matriu[DIM_MAT][DIM_MAT]);
 
 int Figura::getFilaInicial() const
 {
-	if (m_tipusFigura != FIGURA_I)
-		
+	bool trobat = false;
+	int f = 0, c = 0;
+	while(!trobat && f < MAX_FILES)
+	{
+		while (c < MAX_COLUMNES)
+		{
+			if (m_matriu[f][c] == m_color)
+			{	trobat = true;
+				c = MAX_COLUMNES;
+			}
+			else c++;
+		}
+		c = 0;
+		if (!trobat) 
+			f++;
+	}	
+	return m_fila - (f + 1);
 }
+

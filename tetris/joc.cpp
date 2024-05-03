@@ -84,9 +84,7 @@ int Joc::baixaFigura()
 	m_figura.baixa();
 	if (m_tauler.colisioFigura(m_figura))
 	{
-		int alcadaFig, ampladaFig;
 		m_tauler.escriuFigura(m_figura);
-		m_figura.getValors(alcadaFig, ampladaFig);
 		// ara toca comprovar totes les files que ocupi la figura
 		for (int f = m_figura.getFilaInicial(); f < f + 3; f++)
 		{	
