@@ -138,19 +138,21 @@ int Figura::getFilaInicial() const
 	int f = 0, c = 0;
 	while(!trobat && f < MAX_FILES)
 	{
-		while (c < MAX_COLUMNES)
+		while (c < MAX_COLUMNES && !trobat)
 		{
 			if (m_matriu[f][c] == m_color)
-			{	trobat = true;
-				c = MAX_COLUMNES;
+			{	
+				trobat = true;
 			}
 			else c++;
 		}
-		c = 0;
 		if (!trobat) 
+		{
+			c = 0;
 			f++;
+		}
 	}	
-	if (f == 0)
+	if (f == 0 || (f == 1 && m_tipusFigura == FIGURA_I)) //canviar quan trobem solució
 		return (m_fila - 1);
 	else if (f == 1)
 		return m_fila;
@@ -159,4 +161,32 @@ int Figura::getFilaInicial() const
 	//si f es otra cosa tenim un problema ...
 }
 
-int Figura::get
+int Figura::getColInicial() const
+{
+	bool trobat = false;
+	int f = 0, c = 0;
+	while(!trobat && f < MAX_FILES)
+	{
+		while (c < MAX_COLUMNES && !trobat)
+		{
+			if (m_matriu[f][c] == m_color)
+			{
+				trobat = true;
+				int col = c;
+			}
+			else c++;
+
+		}
+		if (!trobat)
+		{
+			c = 0;
+			f++;
+		}
+	}
+	if (col == 0 && m_tipusFigura != FIGURA_I)
+		return (m_columna - 1);
+	else if (col == 0 && tipusFigura == FIGURA_I)
+		return (m_columna - 2);
+	else 
+		return m_columna;
+}
