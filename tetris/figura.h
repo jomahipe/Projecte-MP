@@ -51,6 +51,7 @@ public:
 	//matriu
 	void inicialitzaMatriu();
 	void getMatriu(ColorFigura matriu[DIM_MAT][DIM_MAT], int& alcada, int& amplada);
+	int getValors(int& alcada, int& amplada) { alcada = m_alcada; amplada = m_amplada;}
 private:
 	TipusFigura m_tipusFigura;
 	int m_fila;
