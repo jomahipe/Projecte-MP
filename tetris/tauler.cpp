@@ -49,3 +49,12 @@ void Tauler::eliminaFila(int fila)
     }
 
 }
+
+
+bool colisioFigura(Figura fig)
+{
+    // obtenim la matriu de figura
+    // es recorre la matriu amb el tauler. Xoca?
+    // si hi ha colisio return true
+    // si no, false
+}

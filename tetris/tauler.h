@@ -13,7 +13,7 @@ public:
 	Tauler(ColorFigura tauler); // constructor que inicialitza el tauler que rep com a paràmetre
 	bool filaCompleta(int fila);
 	void eliminaFila(int fila);
-	bool colisioFigura(Figura f);
+	bool colisioFigura(Figura fig);
 	//getters
 	ColorFigura getValor(int fila, int col) { return int(m_tauler[fila][col]); }
 private:
