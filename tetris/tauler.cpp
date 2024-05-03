@@ -1,6 +1,13 @@
 #include "tauler.h"
 
-
+Tauler::Tauler()
+{
+    for (int f = 0; f < MAX_FILES; f++)
+    {
+        for (int c = 0; c < MAX_COLUMNES; c++)
+            tauler[f][c] = NO_COLOR;
+    }
+}
 void Tauler::inicialitza(ColorFigura tauler)
 {
     for (int f = 0; f < MAX_FILES; f++)

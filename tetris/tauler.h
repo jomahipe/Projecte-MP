@@ -9,17 +9,17 @@ const int MAX_COLUMNES; // hem d'inicialitzar aquests valors!
 class Tauler
 {
 public:
-	Tauler() { m_tauler[N_FILES][N_COLUMNES] = {{NO_COLOR}}; }
+	Tauler();
 	void inicialitza(ColorFigura tauler); // constructor que inicialitza el tauler que rep com a paràmetre
 	bool filaCompleta(int fila);
+	bool filaBuida(int fila);
 	void eliminaFila(int fila);
 	bool colisioFigura(Figura fig);
-	void escriuFigura(Figura fig);
+	void escriuFigura(Figura);
 	//getters
 	ColorFigura getValor(int fila, int col) { return int(m_tauler[fila][col]); }
 private:
   	ColorFigura m_tauler[N_FILES][N_COLUMNES];
-	bool filaBuida(int fila);
   
 }
 
