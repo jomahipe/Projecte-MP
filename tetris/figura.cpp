@@ -57,9 +57,14 @@ bool Figura::giraFigura(direccioGir gir)
 	}
 	
 }
-void Figura::moure(int dirX)
+void Figura::mouX(int dirX)
 {
-	m_columna = m_columna + dirX;
+	m_columna += dirX;
+}
+
+void Figura::mouY(int dirY)
+{
+	m_fila += dirY;
 }
 
 void Figura::setGir(int gir)

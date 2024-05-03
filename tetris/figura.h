@@ -33,8 +33,8 @@ public:
 	Figura() { m_girFigura = 0;}
 	bool giraFigura(DireccioGir direccio);
 	void inicialitza(TipusFigura tipus, int fila, int columna);
-	void moure(int dirX);
-	void baixa(int dirY); //pot ser 1 o -1
+	void mouX(int dirX);
+	void mouY(int dirY); //pot ser 1 o -1
 	// getters:
 	int getMatriuFigura();
 	TipusFigura getTipusFigura() const { return m_tipusFigura; }	
