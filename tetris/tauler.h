@@ -3,8 +3,8 @@
 #include "figura.h"
 //codi aqui
 
-const int MAX_FILES;
-const int MAX_COLUMNES; // hem d'inicialitzar aquests valors!
+const int MAX_FIL;
+const int MAX_COL; // hem d'inicialitzar aquests valors!
 
 class Tauler
 {

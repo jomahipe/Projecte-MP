@@ -2,17 +2,17 @@
 
 Tauler::Tauler()
 {
-    for (int f = 0; f < MAX_FILES; f++)
+    for (int f = 0; f < MAX_COL; f++)
     {
-        for (int c = 0; c < MAX_COLUMNES; c++)
+        for (int c = 0; c < MAX_COL; c++)
             tauler[f][c] = NO_COLOR;
     }
 }
 void Tauler::inicialitza(ColorFigura tauler)
 {
-    for (int f = 0; f < MAX_FILES; f++)
+    for (int f = 0; f < MAX_COL; f++)
     {
-        for (int c = 0; c < MAX_COLUMNES; c++)
+        for (int c = 0; c < MAX_COL; c++)
             m_tauler[f][c] = tauler[f][c];
     }
 }
@@ -22,12 +22,12 @@ bool Tauler::filaCompleta(int fila)
 {
 	int j = 0;
 	bool completa = true;
-    if (fila >= MAX_FILES)
+    if (fila >= MAX_COL)
     { 
         completa = false;
         goto out;
     }
-	while (j < MAX_COLUMNES && completa)
+	while (j < MAX_COL && completa)
 	{
 		if (m_tauler[fila][j] == 0)
 		{
@@ -41,7 +41,7 @@ bool Tauler::filaBuida(int fila)
 {
     bool buida = true;
     int i = 0;
-    while (buida && i < MAX_COLUMNES)
+    while (buida && i < MAX_COL)
     {
         if (m_tauler[fila][i] != 0)
             buida = false;
@@ -55,7 +55,7 @@ void Tauler::eliminaFila(int fila)
     
     while (f > 1 && !filaBuida(f))
     {
-        for (int c = 0; c < MAX_COLUMNES; c++)
+        for (int c = 0; c < MAX_COL; c++)
             m_tauler[f][c] = m_tauler[f - 1][c];
         --f;
     }
@@ -82,7 +82,7 @@ bool Tauler::colisio(Figura fig)
 				{
 					int filaTauler = novaFila + i;
 					int columnaTauler = novaColumna + j;
-					if ((filaTauler < 0 && filaTauler > MAX_FILES) && (columnaTauler<0 && columnaTauler>MAX_COLUMNES))
+					if ((filaTauler < 0 && filaTauler > MAX_COL) && (columnaTauler<0 && columnaTauler>MAX_COL))
 					{
 						//estem fora dels limits
 						trobat = true;
@@ -111,7 +111,8 @@ void Tauler::escriuFigura(Figura fig)
     {
         for (int filaTauler = fig.getFilaInicial(); filaTauler < fig.getFilaFinal(); filaTauler++)
         {
-            for (int colTauler = fig.getColInicial(); colTauler < fig.getColFinal(); )
+            for (int colTauler = fig.getColInicial(); colTauler < fig.getColFinal(); colTauler++)
+
         }
 
 }

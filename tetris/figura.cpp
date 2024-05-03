@@ -136,9 +136,9 @@ int Figura::getFilaInicial() const
 {
 	bool trobat = false;
 	int f = 0, c = 0;
-	while(!trobat && f < MAX_FILES)
+	while(!trobat && f < DIM_MAT)
 	{
-		while (c < MAX_COLUMNES && !trobat)
+		while (c < DIM_MAT && !trobat)
 		{
 			if (m_matriu[f][c] == m_color)
 			{	
@@ -165,9 +165,9 @@ int Figura::getColInicial() const
 {
 	bool trobat = false;
 	int f = 0, c = 0;
-	while(!trobat && f < MAX_FILES)
+	while(!trobat && f < DIM_MAT)
 	{
-		while (c < MAX_COLUMNES && !trobat)
+		while (c < DIM_MAT && !trobat)
 		{
 			if (m_matriu[f][c] == m_color)
 			{
