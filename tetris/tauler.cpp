@@ -58,3 +58,8 @@ bool colisioFigura(Figura fig)
     // si hi ha colisio return true
     // si no, false
 }
+
+void Tauler::escriuFigura(Figura fig)
+{
+    
+}
