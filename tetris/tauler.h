@@ -10,7 +10,7 @@ class Tauler
 {
 public:
 	Tauler();
-	void inicialitza(ColorFigura tauler); // constructor que inicialitza el tauler que rep com a paràmetre
+	void inicialitza(ColorFigura tauler); // constructor que inicialitza el tauler amb el que rep com a paràmetre
 	bool filaCompleta(int fila);
 	bool filaBuida(int fila);
 	void eliminaFila(int fila);
