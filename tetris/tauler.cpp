@@ -109,9 +109,14 @@ void Tauler::escriuFigura(Figura fig)
     fig.getValors(alcadaFigura, ampladaFigura);
     if (fig.getTipusFigura != FIGURA_I)
     {
+		int f = 0; c = 0;
         for (int filaTauler = fig.getFilaInicial(); filaTauler < fig.getFilaFinal(); filaTauler++)
         {
             for (int colTauler = fig.getColInicial(); colTauler < fig.getColFinal(); colTauler++)
+           {
+			   m_tauler[filaTauler][colTauler] = matriuFigura[f][c];
+			   f++;
+			   c++; 
 
         }
 
