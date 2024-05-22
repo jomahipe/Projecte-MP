@@ -106,16 +106,14 @@ void Tauler::escriuFigura(Figura fig)
     ColorFigura matriuFigura[DIM_MAT][DIM_MAT];
     fig.getMatriu(matriuFigura);
     fig.getValors(alcadaFigura, ampladaFigura);
-    if (fig.getTipusFigura != FIGURA_I)
+	int f = 0; c = 0;
+    for (int filaTauler = fig.getFilaInicial(); filaTauler < fig.getFilaFinal(); filaTauler++)
     {
-		int f = 0; c = 0;
-        for (int filaTauler = fig.getFilaInicial(); filaTauler < fig.getFilaFinal(); filaTauler++)
+		for (int colTauler = fig.getColInicial(); colTauler < fig.getColFinal(); colTauler++)
         {
-            for (int colTauler = fig.getColInicial(); colTauler < fig.getColFinal(); colTauler++)
-           {
-			   m_tauler[filaTauler][colTauler] = matriuFigura[f][c];
-			   c++; 
-
-        }
-			f++;
+			m_tauler[filaTauler][colTauler] = matriuFigura[f][c];
+			c++; 
+		}
+		f++;
+	}
 }
