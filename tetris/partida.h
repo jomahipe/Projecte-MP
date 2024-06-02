@@ -6,9 +6,9 @@ class Partida
 {
 public:
 	Partida();
-	void inicialitza();
-	void actualitza();
-
+	void inicialitza(int mode, const string& fitxerInicial, const string& fitxerFigures, const string& fitxerMoviments);
+	void actualitza(int mode, double deltaTime);
+	void menu();
 private:
 	Joc m_joc;
 	int m_puntuacio;
