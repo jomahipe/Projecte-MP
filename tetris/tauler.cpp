@@ -103,14 +103,16 @@ void Tauler::escriuFigura(Figura fig)
 {
     // per a aquest mètode suposem que ja hem fet comprovacions
     // i que la figura no pot baixar sense tapar una figura ja fixada al tauler
-    ColorFigura matriuFigura[DIM_MAT][DIM_MAT];
+	int ff = 0; cf = 0, alc, ampl;
+	ColorFigura matriuFigura[DIM_MAT][DIM_MAT];
     fig.getMatriu(matriuFigura);
-	int ff = 0; cf = 0;
-    for (int f = fig.getFilaInicial(); f < fig.getFilaFinal(); f++)
+	fig.getValors(alc, ampl);
+	    for (int f = fig.getFilaInicial(); f < fig.getFilaInicial() + alc; f++)
     {
-		for (int c = fig.getColInicial(); c < fig.getColFinal(); c++)
+		for (int c = fig.getColInicial(); c < fig.getColInicial() + ampl; c++)
         {
-			m_tauler[f][c] = matriuFigura[ff][cf];
+			if (m_tauler[f][c] == NO_COLOR )
+				m_tauler[f][c] = matriuFigura[ff][cf];
 			cf++; 
 		}
 		ff++;
