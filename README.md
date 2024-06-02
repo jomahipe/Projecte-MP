@@ -12,6 +12,6 @@ moviment és vàlid (no col·lisiona amb altres figures ja col·locades o amb el
 a Caronte per poder validar el correcte funcionament de les diferents funcionalitats.
 
 **Informació de branca:**
-Branca main, sincronitzada quan hi han canvis estables al codi de la branca dev. 
-Última sincronització amb dev: 30/04/2024. Següent sincronització: 03/05/2024 (entrega 1a versió)
+Branca main, sincronitzada quan hi han canvis finals al codi d'altres branques de desenvolupament.
+Última sincronització amb dev: 30/04/2024. 
 
