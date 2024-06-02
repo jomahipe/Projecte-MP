@@ -14,7 +14,7 @@ class Joc
 {
 public:
 	//constructor
-	Joc() { m_puntuacio = 0; m_nivell = 0; }
+	Joc();
     //interfície pública obligatòria 
 	void inicialitza(const string& nomFitxer);
 	void escriuTauler(const string& nomFitxer);
