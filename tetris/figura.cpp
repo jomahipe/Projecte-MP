@@ -50,6 +50,9 @@ if (m_tipusFigura != NO_FIGURA || m_tipusColor != NO_COLOR) {
 		
 	}
 		}
+	int aux = m_alcada;
+	m_alcada = m_amplada;
+	m_amplada = aux;
 }
 
 void Figura::mouX(int dirX)
