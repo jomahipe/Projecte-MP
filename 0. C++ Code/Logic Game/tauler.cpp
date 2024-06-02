@@ -62,42 +62,41 @@ void Tauler::eliminaFila(int fila)
 
 }
 
+enum class CollisionType { 
+NO_COLLISION, 
+OUT_OF_BOUNDS, 
+OVERLAP 
+}
 
-bool Tauler::colisio(Figura fig)
-	{
-		int novaFila = 0;
-		int novaColumna = 0;
-		bool trobat = false; //inicialitzem el boolean trobat a false, es a dir, diem que no hem trobat o detectat colisions
-		novaFila = fig.getFila();
-		novaColumna = fig.getColumna();
-		//arar cal iterar per cada quadrat de la matriu on esta la figura
-		//fem whiles (nomes en detectar una colisio ja es suficient
-		int i = 0;
-		int j = 0;
-		
-		while(i<DIM_MAT&&!trobat){
-			while(j<DIM_MAT&&!trobat){
-				//ara mirem si cada part de la matriu es buida o no, es dir , si te un color o no
-				if (fig.getValors(i, j) != NO_COLOR)//tenim color passe, sino no
-				{
-					int filaTauler = novaFila + i;
-					int columnaTauler = novaColumna + j;
-					if ((filaTauler < 0 && filaTauler > MAX_COL) && (columnaTauler<0 && columnaTauler>MAX_COL))
-					{
-						//estem fora dels limits
-						trobat = true;
-					}
-					if (m_tauler[novaFila][novaColumna] != NO_COLOR)
-					{
-						//en aquesta posicio ja existeix una altre figura
-						trobat = true;
-					}
-				}
-			}
-		}
-		return trobat;
-		
-	}
+CollisionType Tauler::colisio(Figura fig) {
+    int novaFila = fig.getFila();
+    int novaColumna = fig.getColumna();
+    
+    // Iterate through each cell of the figure's matrix
+    for (int i = 0; i < DIM_MAT; ++i) {
+        for (int j = 0; j < DIM_MAT; ++j) {
+            // Check if each part of the matrix is empty or not (i.e., if it has a color or not)
+            if (fig.getValors(i, j) != NO_COLOR) { // Has color
+                int filaTauler = novaFila + i;
+                int columnaTauler = novaColumna + j;
+                
+                if (filaTauler < 0 || filaTauler >= MAX_ROW || columnaTauler < 0 || columnaTauler >= MAX_COL) {
+                    // We're out of bounds
+                    return CollisionType::OUT_OF_BOUNDS;
+                }
+                
+                if (m_tauler[filaTauler][columnaTauler] != NO_COLOR) {
+                    // Another figure already exists at this position
+                    return CollisionType::OVERLAP;
+                }
+            }
+        }
+    }
+    
+    // If no collision detected, return NO_COLLISION
+    return CollisionType::NO_COLLISION;
+}
+
 
 void Tauler::escriuFigura(Figura fig)
 {
