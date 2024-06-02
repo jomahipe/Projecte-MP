@@ -1,1 +1,1 @@
-Branca destinada a fer canvis al codi abans de portar-los a main
+Branca per fer canvis pel lliurament final.
