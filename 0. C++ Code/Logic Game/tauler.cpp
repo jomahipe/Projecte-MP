@@ -13,7 +13,7 @@ void Tauler::inicialitza(ColorFigura tauler)
     for (int f = 0; f < MAX_COL; f++)
     {
         for (int c = 0; c < MAX_COL; c++)
-            m_tauler[f][c] = tauler[f][c];
+            m_tauler[f][c] = ColorFigura(tauler[f][c]);
     }
 }
 
@@ -62,11 +62,7 @@ void Tauler::eliminaFila(int fila)
 
 }
 
-enum class CollisionType { 
-NO_COLLISION, 
-OUT_OF_BOUNDS, 
-OVERLAP 
-}
+
 
 CollisionType Tauler::colisio(Figura fig) {
     int novaFila = fig.getFila();

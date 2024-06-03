@@ -5,6 +5,11 @@
 const int MAX_FIL;
 const int MAX_COL; // hem d'inicialitzar aquests valors!
 
+enum class CollisionType {
+	NO_COLLISION,
+	OUT_OF_BOUNDS,
+	OVERLAP
+}
 class Tauler
 {
 public:
@@ -13,7 +18,7 @@ public:
 	bool filaCompleta(int fila);
 	bool filaBuida(int fila);
 	void eliminaFila(int fila);
-	bool colisio(Figura fig);
+	CollisionType colisio(Figura fig);
 	void escriuFigura(Figura);
 	//getters
 	ColorFigura getValor(int fila, int col) { return int(m_tauler[fila][col]); }

@@ -13,10 +13,10 @@ void Joc::inicialitza(const string& nomFitxer)
 		// la primera fila és el tipus de la figura, posició al tauler i orientació
 		fitxer >> tipusFig >> filaFig >> columnaFig >> girFig;
 		m_figura.inicialitza(TipusFigura(tipusFig), filaFig, columnaFig);
-		m_figura.setGir(girFig);		
 		m_figura.inicialitzaMatriu();
+		m_figura.setGir(girFig);
 		// la resta és el propi tauler
-		ColorFigura taulerFitxer;
+		ColorFigura taulerFitxer[MAX_FILES][MAX_COL];
 		for (int f = 0; f < MAX_FILES; f++)
 		{
 			for (int c = 0; c < MAX_COLUMNES; c++)
@@ -44,10 +44,13 @@ void Joc::escriuTauler(const string& nomFitxer)
 		fitxer << tipusFig << filaFig << columnaFig << girFig;
 	
 	// escrivim tauler
+		if (m_figura.getTipusFigura() != NO_FIGURA)
+			m_tauler.escriuFigura(m_figura);
 		for (int f = 0; f < MAX_FILES; f++)
 		{
 			for (int c = 0; c < MAX_COLUMNES; c++)
 				fitxer << m_tauler.getValor(f, c);
+			fitxer << endl;
 		}
 
 	fitxer.close();
@@ -63,7 +66,7 @@ bool Joc::giraFigura(DireccioGir direccio)
 		direccioContraria = GIR_ANTI_HORARI;
 	else 
 		direccioContraria = GIR_HORARI;
-	bool girValid = !tauler.colisioFigura(m_figura);
+	bool girValid = (tauler.colisioFigura(m_figura) == NO_COLISSION) ;
 	if (!girValid)
 		m_figura.gira(direccioContraria); //desfem gir
 	return girValid;
@@ -83,9 +86,8 @@ int Joc::baixaFigura()
 {
 	int nFiles = 0;
 	m_figura.baixa();
-	if (m_tauler.colisioFigura(m_figura))
+	if (m_tauler.colisioFigura(m_figura) == NO_COLLISION)
 	{
-		m_tauler.escriuFigura(m_figura);
 		// ara toca comprovar totes les files que ocupi la figura
 		for (int f = m_figura.getFilaInicial(); f < f + 3; f++)
 		{	
@@ -97,6 +99,10 @@ int Joc::baixaFigura()
 			
 		}
 
+	}
+	else
+	{
+		m_figura.puja();
 	}
 	
 	return nFiles;
