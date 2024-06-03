@@ -64,23 +64,46 @@ void Tauler::eliminaFila(int fila)
 
 
 
-CollisionType Tauler::figuraValida(Figura fig) {
+#include <array>
+
+enum class CollisionType { 
+    NO_COLLISION, 
+    OUT_OF_BOUNDS, 
+    OVERLAP 
+};
+
+CollisionType Tauler::colisio(Figura fig) {
     int novaFila = fig.getFila();
     int novaColumna = fig.getColumna();
+    const int figHeight = fig.getAlcada();
+    const int figWidth = fig.getAmplada();
     
+    // Create a fixed-size array to store the figure's data
+    int figMatrix[figHeight][figWidth];
+
+    // Initialize the matrix to 0
+    for (int i = 0; i < figHeight; ++i) {
+        for (int j = 0; j < figWidth; ++j) {
+            figMatrix[i][j] = 0;
+        }
+    }
+
+    // Get the figure's matrix
+    fig.getMatriu(figMatrix);
+
     // Iterate through each cell of the figure's matrix
-    for (int i = 0; i < DIM_MAT; ++i) {
-        for (int j = 0; j < DIM_MAT; ++j) {
+    for (int i = 0; i < figHeight; ++i) {
+        for (int j = 0; j < figWidth; ++j) {
             // Check if each part of the matrix is empty or not (i.e., if it has a color or not)
-            if (fig.getValors(i, j) != NO_COLOR) { // Has color
+            if (figMatrix[i][j] != NO_COLOR) { // Has color
                 int filaTauler = novaFila + i;
                 int columnaTauler = novaColumna + j;
-                
+
                 if (filaTauler < 0 || filaTauler >= MAX_ROW || columnaTauler < 0 || columnaTauler >= MAX_COL) {
                     // We're out of bounds
                     return CollisionType::OUT_OF_BOUNDS;
                 }
-                
+
                 if (m_tauler[filaTauler][columnaTauler] != NO_COLOR) {
                     // Another figure already exists at this position
                     return CollisionType::OVERLAP;
@@ -88,7 +111,7 @@ CollisionType Tauler::figuraValida(Figura fig) {
             }
         }
     }
-    
+
     // If no collision detected, return NO_COLLISION
     return CollisionType::NO_COLLISION;
 }
