@@ -65,7 +65,6 @@ void Tauler::eliminaFila(int fila)
 
 
 
-
 enum class CollisionType { 
     NO_COLLISION, 
     OUT_OF_BOUNDS, 
@@ -91,6 +90,8 @@ CollisionType Tauler::colisio(Figura fig) {
     // Get the figure's matrix
     fig.getMatriu(figMatrix);
 
+    bool canMoveDown = true;
+
     // Iterate through each cell of the figure's matrix
     for (int i = 0; i < figHeight; ++i) {
         for (int j = 0; j < figWidth; ++j) {
@@ -108,6 +109,25 @@ CollisionType Tauler::colisio(Figura fig) {
                     // Another figure already exists at this position
                     return CollisionType::OVERLAP;
                 }
+
+                // Check if the figure can move down
+                int filaBelow = filaTauler + 1;
+                if (filaBelow >= MAX_ROW || (filaBelow >= 0 && m_tauler[filaBelow][columnaTauler] != NO_COLOR)) {
+                    canMoveDown = false;
+                }
+            }
+        }
+    }
+
+    // If the figure can't move down, write it to the board
+    if (!canMoveDown) {
+        for (int i = 0; i < figHeight; ++i) {
+            for (int j = 0; j < figWidth; ++j) {
+                if (figMatrix[i][j] != NO_COLOR) { // Has color
+                    int filaTauler = novaFila + i;
+                    int columnaTauler = novaColumna + j;
+                    m_tauler[filaTauler][columnaTauler] = figMatrix[i][j];
+                }
             }
         }
     }
@@ -115,6 +135,7 @@ CollisionType Tauler::colisio(Figura fig) {
     // If no collision detected, return NO_COLLISION
     return CollisionType::NO_COLLISION;
 }
+
 
 
 void Tauler::escriuFigura(Figura fig)
