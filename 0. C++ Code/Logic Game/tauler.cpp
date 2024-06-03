@@ -71,19 +71,7 @@ enum class CollisionType {
     OVERLAP 
 };
 
-class Tauler {
-public:
-    CollisionType colisio(Figura fig);
 
-private:
-    bool isPositionValid(Figura fig);
-    bool hasCollisionBelow(Figura fig);
-    void writeFigureToBoard(Figura fig);
-
-    static const int MAX_ROW = 20; // Example value, replace with actual value
-    static const int MAX_COL = 10; // Example value, replace with actual value
-    int m_tauler[MAX_ROW][MAX_COL]; // Example board
-};
 
 bool Tauler::isPositionValid(Figura fig) {
     int novaFila = fig.getFila();
