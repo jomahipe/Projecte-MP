@@ -64,7 +64,7 @@ void Tauler::eliminaFila(int fila)
 
 
 
-#include <array>
+
 
 enum class CollisionType { 
     NO_COLLISION, 
