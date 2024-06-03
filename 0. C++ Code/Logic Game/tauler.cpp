@@ -71,70 +71,106 @@ enum class CollisionType {
     OVERLAP 
 };
 
-CollisionType Tauler::colisio(Figura fig) {
+class Tauler {
+public:
+    CollisionType colisio(Figura fig);
+
+private:
+    bool isPositionValid(Figura fig);
+    bool hasCollisionBelow(Figura fig);
+    void writeFigureToBoard(Figura fig);
+
+    static const int MAX_ROW = 20; // Example value, replace with actual value
+    static const int MAX_COL = 10; // Example value, replace with actual value
+    int m_tauler[MAX_ROW][MAX_COL]; // Example board
+};
+
+bool Tauler::isPositionValid(Figura fig) {
     int novaFila = fig.getFila();
     int novaColumna = fig.getColumna();
     const int figHeight = fig.getAlcada();
     const int figWidth = fig.getAmplada();
     
-    // Create a fixed-size array to store the figure's data
     int figMatrix[figHeight][figWidth];
-
-    // Initialize the matrix to 0
-    for (int i = 0; i < figHeight; ++i) {
-        for (int j = 0; j < figWidth; ++j) {
-            figMatrix[i][j] = 0;
-        }
-    }
-
-    // Get the figure's matrix
     fig.getMatriu(figMatrix);
 
-    bool canMoveDown = true;
-
-    // Iterate through each cell of the figure's matrix
     for (int i = 0; i < figHeight; ++i) {
         for (int j = 0; j < figWidth; ++j) {
-            // Check if each part of the matrix is empty or not (i.e., if it has a color or not)
             if (figMatrix[i][j] != NO_COLOR) { // Has color
                 int filaTauler = novaFila + i;
                 int columnaTauler = novaColumna + j;
 
                 if (filaTauler < 0 || filaTauler >= MAX_ROW || columnaTauler < 0 || columnaTauler >= MAX_COL) {
-                    // We're out of bounds
-                    return CollisionType::OUT_OF_BOUNDS;
+                    return false; // Out of bounds
                 }
 
                 if (m_tauler[filaTauler][columnaTauler] != NO_COLOR) {
-                    // Another figure already exists at this position
-                    return CollisionType::OVERLAP;
+                    return false; // Overlap with existing figure
                 }
+            }
+        }
+    }
+    return true; // Valid position
+}
 
-                // Check if the figure can move down
+bool Tauler::hasCollisionBelow(Figura fig) {
+    int novaFila = fig.getFila();
+    int novaColumna = fig.getColumna();
+    const int figHeight = fig.getAlcada();
+    const int figWidth = fig.getAmplada();
+
+    int figMatrix[figHeight][figWidth];
+    fig.getMatriu(figMatrix);
+
+    for (int i = 0; i < figHeight; ++i) {
+        for (int j = 0; j < figWidth; ++j) {
+            if (figMatrix[i][j] != NO_COLOR) { // Has color
+                int filaTauler = novaFila + i;
+                int columnaTauler = novaColumna + j;
+
                 int filaBelow = filaTauler + 1;
                 if (filaBelow >= MAX_ROW || (filaBelow >= 0 && m_tauler[filaBelow][columnaTauler] != NO_COLOR)) {
-                    canMoveDown = false;
+                    return true; // Collision below
                 }
             }
         }
     }
+    return false; // No collision below
+}
 
-    // If the figure can't move down, write it to the board
-    if (!canMoveDown) {
-        for (int i = 0; i < figHeight; ++i) {
-            for (int j = 0; j < figWidth; ++j) {
-                if (figMatrix[i][j] != NO_COLOR) { // Has color
-                    int filaTauler = novaFila + i;
-                    int columnaTauler = novaColumna + j;
-                    m_tauler[filaTauler][columnaTauler] = figMatrix[i][j];
-                }
+void Tauler::writeFigureToBoard(Figura fig) {
+    int novaFila = fig.getFila();
+    int novaColumna = fig.getColumna();
+    const int figHeight = fig.getAlcada();
+    const int figWidth = fig.getAmplada();
+
+    int figMatrix[figHeight][figWidth];
+    fig.getMatriu(figMatrix);
+
+    for (int i = 0; i < figHeight; ++i) {
+        for (int j = 0; j < figWidth; ++j) {
+            if (figMatrix[i][j] != NO_COLOR) { // Has color
+                int filaTauler = novaFila + i;
+                int columnaTauler = novaColumna + j;
+                m_tauler[filaTauler][columnaTauler] = figMatrix[i][j];
             }
         }
     }
+}
 
-    // If no collision detected, return NO_COLLISION
+CollisionType Tauler::colisio(Figura fig) {
+    if (!isPositionValid(fig)) {
+        return CollisionType::OUT_OF_BOUNDS;
+    }
+
+    if (hasCollisionBelow(fig)) {
+        writeFigureToBoard(fig);
+        return CollisionType::OVERLAP;
+    }
+
     return CollisionType::NO_COLLISION;
 }
+
 
 
 
