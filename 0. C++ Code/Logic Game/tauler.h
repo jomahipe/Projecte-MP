@@ -18,7 +18,8 @@ public:
 	bool filaCompleta(int fila);
 	bool filaBuida(int fila);
 	void eliminaFila(int fila);
-	CollisionType colisio(Figura fig);
+	CollisionType figuraValida(Figura fig);
+	bool colisio(Figura fig);
 	void escriuFigura(Figura);
 	//getters
 	ColorFigura getValor(int fila, int col) { return int(m_tauler[fila][col]); }

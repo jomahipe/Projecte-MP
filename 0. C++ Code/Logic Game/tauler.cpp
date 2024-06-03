@@ -64,7 +64,7 @@ void Tauler::eliminaFila(int fila)
 
 
 
-CollisionType Tauler::colisio(Figura fig) {
+CollisionType Tauler::figuraValida(Figura fig) {
     int novaFila = fig.getFila();
     int novaColumna = fig.getColumna();
     
