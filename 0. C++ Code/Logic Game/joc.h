@@ -1,7 +1,7 @@
 #ifndef JOC_H
 #define JOC_H
-#include "figura.h"
-#include "tauler.h"
+#include "Figura.h"
+#include "Tauler.h"
 #include <fstream>
 #include <string>
 using namespace std;
