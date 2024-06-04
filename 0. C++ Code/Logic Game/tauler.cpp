@@ -63,16 +63,18 @@ void Tauler::eliminaFila(int fila)
 }
 
 bool Tauler::posicioValida(Figura fig) {
+	/* a continuacio tenim codi no important pero el guardo per si de cas: 
     int novaFila = fig.getFila();
     int novaColumna = fig.getColumna();
     int figHeight, figWidth;
     fig.getValors(figHeight,figWidth);
+	*/
     
-    int figMatrix[figHeight][figWidth];
+    int figMatrix[DIM_MAT][DIM_MAT];
     fig.getMatriu(figMatrix);
 
-    for (int i = 0; i < figHeight; ++i) {
-        for (int j = 0; j < figWidth; ++j) {
+    for (int i = 0; i < DIM_MAT; ++i) {
+        for (int j = 0; j < DIM_MAT; ++j) {
             if (figMatrix[i][j] != NO_COLOR) { // Has color
                 int filaTauler = novaFila + i;
                 int columnaTauler = novaColumna + j;
