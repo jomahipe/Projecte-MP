@@ -46,7 +46,7 @@ void Joc::escriuTauler(const string& nomFitxer)
 	// escrivim tauler
 		if (m_figura.getTipusFigura() != NO_FIGURA)
 			m_tauler.escriuFigura(m_figura);
-		for (int f = 0; f < MAX_FILAES; f++)
+		for (int f = 0; f < MAX_FILA; f++)
 		{
 			for (int c = 0; c < MAX_COL; c++)
 				fitxer << m_tauler.getValor(f, c);
@@ -66,7 +66,7 @@ bool Joc::giraFigura(DireccioGir direccio)
 		direccioContraria = GIR_ANTI_HORARI;
 	else 
 		direccioContraria = GIR_HORARI;
-	bool girValid = (tauler.posicioValida(m_figura)) ;
+	bool girValid = (Tauler.posicioValida(m_figura)) ;
 	if (!girValid)
 		m_figura.gira(direccioContraria); //desfem gir
 	return girValid;
