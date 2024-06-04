@@ -1,6 +1,8 @@
 #pragma once
 #include "joc.h"
-
+type enum DireccioGir{
+	
+}
 typedef enum
 {
 NO_FIGURA = 0,
