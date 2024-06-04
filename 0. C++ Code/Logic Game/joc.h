@@ -1,4 +1,5 @@
-#pragma once
+#ifndef JOC_H
+#define JOC_H
 #include "figura.h"
 #include "tauler.h"
 #include <fstream>
@@ -25,3 +26,5 @@ private:
 	Figura m_figura;
 
 };
+
+#endif

@@ -1,7 +1,5 @@
-#pragma once
-#idndef CONSTANTS_H
-#define CONSTANTS_H
-#include "figura.h"
+#ifndef TAULER_H
+#define TAULER_H
 //codi aqui
 
 const int MAX_FILA = 21;
@@ -25,3 +23,4 @@ private:
 	ColorFigura m_tauler[MAX_FILA][MAX_COL];
 
 };
+#endif
