@@ -1,7 +1,7 @@
 #ifndef FIGURA_H
 #define FIGURA_H
-#include "joc.h"
-#include "tauler.h"
+#include "Joc.h"
+#include "Tauler.h"
 typedef enum
 {
 GIR_HORARI = 0,
