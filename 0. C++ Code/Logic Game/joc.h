@@ -19,7 +19,7 @@ public:
 	int baixaFigura();
 private:
 	ColorFigura m_tauler;
-	TipusFigura m_figura;
+Figura m_figura;
 
 };
 
