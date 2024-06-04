@@ -11,13 +11,13 @@ class Tauler
 {
 public:
 	Tauler();
-	void inicialitza(colorFigura tauler[MAX_FILA][MAX_COL]); // constructor que inicialitza el tauler amb el que rep com a paràmetre
+	void inicialitza(ColorFigura tauler[MAX_FILA][MAX_COL]); // constructor que inicialitza el tauler amb el que rep com a paràmetre
 	bool filaCompleta(int fila);
 	bool filaBuida(int fila);
 	void eliminaFila(int fila);
 	bool colisio(Figura fig);
-	bool posicioValida(Figura fig);
-	void escriuFigura(Figura);
+	bool posicioValida(TipusFigura fig);
+	void escriuFigura(TipusFigura fig);
 	//getters
 	int getValor(int fila, int col) { return int(m_tauler[fila][col]); }
 private:

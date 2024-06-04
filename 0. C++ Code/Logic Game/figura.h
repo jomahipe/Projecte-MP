@@ -3,6 +3,12 @@
 #include "joc.h"
 typedef enum
 {
+GIR_HORARI = 0,
+GIR_ANTI_HORARI
+} DireccioGir;
+
+typedef enum
+{
 NO_FIGURA = 0,
 FIGURA_O,
 FIGURA_I,

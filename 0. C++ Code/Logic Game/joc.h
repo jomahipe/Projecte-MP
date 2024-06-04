@@ -6,11 +6,7 @@
 #include <string>
 using namespace std;
 
-typedef enum
-{
-GIR_HORARI = 0,
-GIR_ANTI_HORARI
-} DireccioGir;
+
 class Joc
 {
 public:
@@ -22,8 +18,8 @@ public:
 	bool mouFigura(int dirX);
 	int baixaFigura();
 private:
-	Tauler m_tauler;
-	Figura m_figura;
+	ColorFigura m_tauler;
+	TipusFigura m_figura;
 
 };
 
