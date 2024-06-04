@@ -1,8 +1,11 @@
 #pragma once
 #include "joc.h"
-type enum DireccioGir{
-	GIR_HORARI, GIR_ANTI_HORARI, NO_GIR
-}
+typedef enum {
+GIR_HORARI, 
+GIR_ANTI_HORARI, 
+NO_GIR
+} DireccioGir;
+
 typedef enum
 {
 NO_FIGURA = 0,
