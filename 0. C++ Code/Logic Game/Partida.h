@@ -30,10 +30,15 @@ private:
     Joc m_joc;
     int m_puntuacio;
     int m_nivell;
-    TipusFigura m_sequenciaFigures[MAX_FIGURES];
-    string m_sequenciaMoviments[MAX_FIGURES];
-    void actualitzaJoc();
-    void actualitzaTest();
+    ModePartida m_mode;
+    LlistaNodes m_sequenciaFigures[MAX_FIGURES];
+    LlistaNodes m_sequenciaMoviments[MAX_FIGURES];
+    
+    //metodes per a public
+    void actualitzaNormal(double deltaTime);
+    void actualitzaTest(double deltaTime);
+    void inicialitzaNormal();
+    void inicialitzaTest();
 };
 
 #endif 
