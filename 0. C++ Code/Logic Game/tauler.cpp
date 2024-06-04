@@ -62,7 +62,7 @@ void Tauler::eliminaFila(int fila)
 
 }
 
-bool Tauler::posicioValida(TipusFigura fig) {
+bool Tauler::posicioValida(Figura fig) {
 	// a continuacio tenim codi no important pero el guardo per si de cas: 
     int novaFila = fig.getFila();
     int novaColumna = fig.getColumna();
@@ -92,7 +92,7 @@ bool Tauler::posicioValida(TipusFigura fig) {
     return true; // Valid position
 }
 
-bool Tauler::colisio(TipusFigura fig) {
+bool Tauler::colisio(Figura fig) {
     int novaFila = fig.getFila();
     int novaColumna = fig.getColumna();
     int figHeight, figWidth;
@@ -118,7 +118,7 @@ bool Tauler::colisio(TipusFigura fig) {
 }
 
 
-void Tauler::escriuFigura(TipusFigura fig)
+void Tauler::escriuFigura(Figura fig)
 {
     // per a aquest mètode suposem que ja hem fet comprovacions
     // i que la figura no pot baixar sense tapar una figura ja fixada al tauler
