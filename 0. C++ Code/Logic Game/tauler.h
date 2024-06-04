@@ -6,20 +6,7 @@
 
 const int MAX_FIL = 21;
 const int MAX_COL= 11; 
-/*el type enum struct a continuacio esta duplicat(poso barres per si decas)
-typedef enum
-{
-	COLOR_NEGRE = 0,
-	COLOR_GROC,
-	COLOR_BLAUCEL,
-	COLOR_MAGENTA,
-	COLOR_TARONJA,
-	COLOR_BLAUFOSC,
-	COLOR_VERMELL,
-	COLOR_VERD,
-	NO_COLOR
-} ColorFigura;
-*/a
+
 
 class Tauler
 {
