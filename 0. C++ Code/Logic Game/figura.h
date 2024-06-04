@@ -1,12 +1,6 @@
 #ifndef FIGURA_H
 #define FIGURA_H
-
-typedef enum {
-GIR_HORARI, 
-GIR_ANTI_HORARI, 
-NO_GIR
-} DireccioGir;
-
+#include "joc.h"
 typedef enum
 {
 NO_FIGURA = 0,

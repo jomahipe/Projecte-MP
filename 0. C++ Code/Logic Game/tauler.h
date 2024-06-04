@@ -11,7 +11,7 @@ class Tauler
 {
 public:
 	Tauler();
-	void inicialitza(int tauler[MAX_FILA][MAX_COL]); // constructor que inicialitza el tauler amb el que rep com a paràmetre
+	void inicialitza(colorFigura tauler[MAX_FILA][MAX_COL]); // constructor que inicialitza el tauler amb el que rep com a paràmetre
 	bool filaCompleta(int fila);
 	bool filaBuida(int fila);
 	void eliminaFila(int fila);

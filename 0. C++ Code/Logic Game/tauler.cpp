@@ -63,21 +63,23 @@ void Tauler::eliminaFila(int fila)
 }
 
 bool Tauler::posicioValida(Figura fig) {
+	/* a continuacio tenim codi no important pero el guardo per si de cas: 
     int novaFila = fig.getFila();
     int novaColumna = fig.getColumna();
     int figHeight, figWidth;
     fig.getValors(figHeight,figWidth);
+	*/
     
-    ColorFigura figMatrix[DIM_MAT][DIM_MAT];
+    int figMatrix[DIM_MAT][DIM_MAT];
     fig.getMatriu(figMatrix);
 
-    for (int i = 0; i < figHeight; ++i) {
-        for (int j = 0; j < figWidth; ++j) {
+    for (int i = 0; i < DIM_MAT; ++i) {
+        for (int j = 0; j < DIM_MAT; ++j) {
             if (figMatrix[i][j] != NO_COLOR) { // Has color
                 int filaTauler = novaFila + i;
                 int columnaTauler = novaColumna + j;
 
-                if (filaTauler < 0 || filaTauler >= MAX_FIL || columnaTauler < 0 || columnaTauler >= MAX_COL) {
+                if (filaTauler < 0 || filaTauler >= MAX_FILA || columnaTauler < 0 || columnaTauler >= MAX_COL) {
                     return false; // Out of bounds
                 }
 
@@ -96,7 +98,7 @@ bool Tauler::colisio(Figura fig) {
     int figHeight, figWidth;
     fig.getValors(figHeight, figWidth);
 
-    int figMatrix[DIM_MAT][DIM_MAT];
+    ColorFigura figMatrix[DIM_MAT][DIM_MAT];
     fig.getMatriu(figMatrix);
 
     for (int i = 0; i < DIM_MAT; ++i) {
