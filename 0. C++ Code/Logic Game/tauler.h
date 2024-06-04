@@ -24,9 +24,6 @@ public:
 	void escriuFigura(Figura);
 	//getters
 	ColorFigura getValor(int fila, int col) { return int(m_tauler[fila][col]); }
-// a continuacio tenim els metodes que ens permeten saber si tenim una colisio, un overlap...:
-	
-CollisionType (Figura fig);
 private:
 	ColorFigura m_tauler[N_FILES][N_COLUMNES];
 
