@@ -79,7 +79,7 @@ bool Tauler::posicioValida(Figura fig) {
                 int filaTauler = novaFila + i;
                 int columnaTauler = novaColumna + j;
 
-                if (filaTauler < 0 || filaTauler >= MAX_FIL || columnaTauler < 0 || columnaTauler >= MAX_COL) {
+                if (filaTauler < 0 || filaTauler >= MAX_FILA || columnaTauler < 0 || columnaTauler >= MAX_COL) {
                     return false; // Out of bounds
                 }
 
