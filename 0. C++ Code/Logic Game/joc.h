@@ -17,6 +17,9 @@ public:
 	bool giraFigura(DireccioGir direccio);
 	bool mouFigura(int dirX);
 	int baixaFigura();
+
+	//partida
+	void dibuixa();
 private:
 	Tauler m_tauler;
 Figura m_figura;

@@ -30,6 +30,7 @@ private:
     Joc m_joc;
     int m_puntuacio;
     int m_nivell;
+    bool m_jocAcabat;
     ModePartida m_mode;
     LlistaNodes m_sequenciaFigures[MAX_FIGURES];
     LlistaNodes m_sequenciaMoviments[MAX_FIGURES];

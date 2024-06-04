@@ -12,7 +12,19 @@ Partida::Partida()
 
 void Partida::actualitza(double deltaTime)
 {
-    
+    if (!m_jocAcabat)
+    {
+        if (m_mode == NORMAL)
+            actualitzaNormal();
+        else actualitzaTest();
+    }
+    GraphicManager::getInstance()->drawSprite(GRAFIC_FONS, 0, 0, false);
+    m_joc.dibuixa();
+    if (m_jocAcabat)
+    {
+        string out = "FINAL DE LA PARTIDA";
+        GraphicManager::getInstance()->drawFont(FONT_WHITE_30, 1.8, out);
+    }
 
 
 }
