@@ -15,7 +15,7 @@ public:
 	bool filaCompleta(int fila);
 	bool filaBuida(int fila);
 	void eliminaFila(int fila);
-	bool colisio(Figura fig);
+	bool colisio(TipusFigura fig);
 	bool posicioValida(TipusFigura fig);
 	void escriuFigura(TipusFigura fig);
 	//getters
