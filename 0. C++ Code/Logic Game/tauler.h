@@ -20,15 +20,13 @@ public:
 	void eliminaFila(int fila);
 	CollisionType figuraValida(Figura fig);
 	bool colisio(Figura fig);
+	bool posicioValida(Figura fig);
 	void escriuFigura(Figura);
 	//getters
 	ColorFigura getValor(int fila, int col) { return int(m_tauler[fila][col]); }
 // a continuacio tenim els metodes que ens permeten saber si tenim una colisio, un overlap...:
-bool isPositionValid(Figura fig);
-bool hasCollisionsBelow(Figura fig);
-void writeFiguraToBoard(Figura fig);
+	
 CollisionType (Figura fig);
-writeFiguraBoard();
 private:
 	ColorFigura m_tauler[N_FILES][N_COLUMNES];
 

@@ -66,7 +66,7 @@ bool Joc::giraFigura(DireccioGir direccio)
 		direccioContraria = GIR_ANTI_HORARI;
 	else 
 		direccioContraria = GIR_HORARI;
-	bool girValid = (tauler.colisioFigura(m_figura) == NO_COLISSION) ;
+	bool girValid = (tauler.posicioValida(m_figura)) ;
 	if (!girValid)
 		m_figura.gira(direccioContraria); //desfem gir
 	return girValid;
@@ -76,7 +76,7 @@ bool Joc::giraFigura(DireccioGir direccio)
 bool Joc::mouFigura(int dirX)
 {
 	m_figura.moure(dirX);
-	bool movValid = !tauler.colisioFigura(m_figura);
+	bool movValid = tauler.posicioValida(m_figura);
 	if (!movValid)
 		m_figura.moure(-dirX);
 	return movValid;
@@ -86,9 +86,10 @@ int Joc::baixaFigura()
 {
 	int nFiles = 0;
 	m_figura.baixa();
-	if (m_tauler.colisioFigura(m_figura) == NO_COLLISION)
+	if (m_tauler.posicioValida(m_figura) && m_tauler.colisio(m_figura))
 	{
 		// ara toca comprovar totes les files que ocupi la figura
+		m_tauler.escriuFigura(m_figura);
 		for (int f = m_figura.getFilaInicial(); f < f + 3; f++)
 		{	
 			if (m_tauler.filaCompleta(f))
