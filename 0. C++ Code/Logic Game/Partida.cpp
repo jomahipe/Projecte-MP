@@ -87,3 +87,47 @@ void Partida::actualitza(double deltaTime)
 
 }
 
+void Partida::menu()
+{   
+    int choice;
+    cout << "Benvingut al Tetris!" << endl;
+    cout << "Escull una opció prement la tecla corresponent i ENTER: " << endl;
+    cout << "1. JUGAR (MODE NORMAL)" << endl;
+    cout << "2. JUGAR (MODE TEST)" << endl;
+    cout << "3. VISUALITZAR MILLORS PUNTUACIONS" << endl;
+    cout << "4. SORTIR " << endl;
+    cin >> choice;
+    switch (choice)
+    {
+    case(1):
+
+    case(2):
+
+    case(3):
+
+    case(4):
+
+    }
+}
+
+void Partida::actualitzaJoc()
+{
+
+    if (Keyboard_GetKeyTrg(KEYBOARD_RIGHT))
+        m_joc.mouFigura(1);
+    
+    else
+    {
+        if (Keyboard_GetKeyTrg(KEYBOARD_LEFT))
+            m_joc.mouFigura(-1);
+    }
+    if (Keyboard_GetKeyTrg(KEYBOARD_UP))
+        m_joc.giraFigura(GIR_HORARI);
+
+    else
+    {
+        if (Keyboard_GetKeyTrg(KEYBOARD_DOWN))
+            m_joc.giraFigura(GIR_ANTI_HORARI);
+    }
+ 
+}

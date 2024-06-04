@@ -1,25 +1,39 @@
 #ifndef PARTIDA_H
 #define PARTIDA_H
-
 #include <stdio.h>
 #include <string>
+#include "joc.h"
 #include "InfoJoc.h"
+#include "LlistaNodes.h"
 
 using namespace std;
 
+typedef enum
+{
+    NORMAL,
+    TEST
+}ModePartida;
+
+const int MAX_FIGURES = 200;
 class Partida 
 {
 public:
     Partida();
-    
-    void actualitza(double deltaTime);
+    void inicialitza(int mode, const string& fitxerInicial, const string& fitxerFigures, const string& fitxerMoviments);
+    void actualitza(int mode, double deltaTime);
+    void menu();
+    //getters
+    int getPuntuacio() const { return m_puntuacio; }
+    int getNivell() const { return m_nivell;  }
 private:
     double m_temps;
-    // Atributs necessaris només pels exemples d'utilització de la llibreria. 
-    // S'hauran d'eliminar per la implementació del projecte
-    static const int MIDA = 4;
-    ColorFigura m_forma[MIDA][MIDA];
-    int m_fila, m_columna;
+    Joc m_joc;
+    int m_puntuacio;
+    int m_nivell;
+    TipusFigura m_sequenciaFigures[MAX_FIGURES];
+    string m_sequenciaMoviments[MAX_FIGURES];
+    void actualitzaJoc();
+    void actualitzaTest();
 };
 
 #endif 
