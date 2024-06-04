@@ -98,7 +98,7 @@ bool Tauler::colisio(Figura fig) {
     int figHeight, figWidth;
     fig.getValors(figHeight, figWidth);
 
-    int figMatrix[DIM_MAT][DIM_MAT];
+    ColorFigura figMatrix[DIM_MAT][DIM_MAT];
     fig.getMatriu(figMatrix);
 
     for (int i = 0; i < DIM_MAT; ++i) {
