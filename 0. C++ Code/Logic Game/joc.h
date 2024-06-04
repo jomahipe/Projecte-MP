@@ -18,7 +18,7 @@ public:
 	bool mouFigura(int dirX);
 	int baixaFigura();
 private:
-	Tauler m_tauler;
+	tauler m_tauler;
 Figura m_figura;
 
 };
