@@ -16,8 +16,8 @@ public:
 	bool filaBuida(int fila);
 	void eliminaFila(int fila);
 	bool colisio(Figura fig);
-	bool posicioValida(Figura fig);
-	void escriuFigura(Figura);
+	bool posicioValida(TipusFigura fig);
+	void escriuFigura(TipusFigura fig);
 	//getters
 	int getValor(int fila, int col) { return int(m_tauler[fila][col]); }
 private:
