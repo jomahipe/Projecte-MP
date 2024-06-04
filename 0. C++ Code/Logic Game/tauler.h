@@ -4,8 +4,8 @@
 #include "figura.h"
 //codi aqui
 
-const int MAX_FIL = 21;
-const int MAX_COL= 11; 
+const int MAX_FILA = 21;
+const int MAX_COL = 11; 
 
 
 class Tauler
@@ -22,6 +22,6 @@ public:
 	//getters
 	int getValor(int fila, int col) { return int(m_tauler[fila][col]); }
 private:
-	ColorFigura m_tauler[MAX_FIL][MAX_COL];
+	ColorFigura m_tauler[MAX_FILA][MAX_COL];
 
 };

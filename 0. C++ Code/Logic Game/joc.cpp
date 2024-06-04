@@ -16,8 +16,8 @@ void Joc::inicialitza(const string& nomFitxer)
 		m_figura.inicialitzaMatriu();
 		m_figura.setGir(girFig);
 		// la resta és el propi tauler
-		ColorFigura taulerFitxer[MAX_FILES][MAX_COL];
-		for (int f = 0; f < MAX_FILES; f++)
+		ColorFigura taulerFitxer[MAX_FILAES][MAX_COL];
+		for (int f = 0; f < MAX_FILAES; f++)
 		{
 			for (int c = 0; c < MAX_COLUMNES; c++)
 				fitxer >> taulerFitxer[f][c];
@@ -46,7 +46,7 @@ void Joc::escriuTauler(const string& nomFitxer)
 	// escrivim tauler
 		if (m_figura.getTipusFigura() != NO_FIGURA)
 			m_tauler.escriuFigura(m_figura);
-		for (int f = 0; f < MAX_FILES; f++)
+		for (int f = 0; f < MAX_FILAES; f++)
 		{
 			for (int c = 0; c < MAX_COLUMNES; c++)
 				fitxer << m_tauler.getValor(f, c);
