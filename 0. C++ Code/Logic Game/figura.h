@@ -60,7 +60,7 @@ public:
 	int getFilaInicial() const;
 	int getColInicial() const;
 private:
-	Figura m_tipusFigura;
+	TipusFigura m_tipusFigura;
 	int m_fila;
 	int m_columna;
 	int m_girFigura;
