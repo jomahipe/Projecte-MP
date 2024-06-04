@@ -52,7 +52,7 @@ public:
 	//matriu
 	void inicialitzaMatriu();
 	void getMatriu(ColorFigura matriu[DIM_MAT][DIM_MAT]);
-	int getValors(int& alcada, int& amplada) { alcada = m_alcada; amplada = m_amplada; }
+	void getValors(int& alcada, int& amplada) { alcada = m_alcada; amplada = m_amplada; }
 	int getFilaInicial() const;
 	int getColInicial() const;
 private:
