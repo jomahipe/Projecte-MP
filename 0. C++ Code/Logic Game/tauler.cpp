@@ -63,12 +63,12 @@ void Tauler::eliminaFila(int fila)
 }
 
 bool Tauler::posicioValida(TipusFigura fig) {
-	/* a continuacio tenim codi no important pero el guardo per si de cas: 
+	// a continuacio tenim codi no important pero el guardo per si de cas: 
     int novaFila = fig.getFila();
     int novaColumna = fig.getColumna();
     int figHeight, figWidth;
     fig.getValors(figHeight,figWidth);
-	*/
+	
     
     int figMatrix[DIM_MAT][DIM_MAT];
     fig.getMatriu(figMatrix);
