@@ -6,11 +6,7 @@
 #include <string>
 using namespace std;
 
-typedef enum
-{
-GIR_HORARI = 0,
-GIR_ANTI_HORARI
-} DireccioGir;
+
 class Joc
 {
 public:
