@@ -2,14 +2,23 @@
 #include "figura.h"
 //codi aqui
 
-const int MAX_FIL;
-const int MAX_COL; // hem d'inicialitzar aquests valors!
+const int MAX_FIL = 21;
+const int MAX_COL 11; 
 
-enum class CollisionType {
-	NO_COLLISION,
-	OUT_OF_BOUNDS,
-	OVERLAP
-}
+typedef enum
+{
+	COLOR_NEGRE = 0,
+	COLOR_GROC,
+	COLOR_BLAUCEL,
+	COLOR_MAGENTA,
+	COLOR_TARONJA,
+	COLOR_BLAUFOSC,
+	COLOR_VERMELL,
+	COLOR_VERD,
+	NO_COLOR
+} ColorFigura;
+
+
 class Tauler
 {
 public:
@@ -18,13 +27,12 @@ public:
 	bool filaCompleta(int fila);
 	bool filaBuida(int fila);
 	void eliminaFila(int fila);
-	CollisionType figuraValida(Figura fig);
 	bool colisio(Figura fig);
 	bool posicioValida(Figura fig);
 	void escriuFigura(Figura);
 	//getters
-	ColorFigura getValor(int fila, int col) { return int(m_tauler[fila][col]); }
+	int getValor(int fila, int col) { return int(m_tauler[fila][col]); }
 private:
-	ColorFigura m_tauler[N_FILES][N_COLUMNES];
+	ColorFigura m_tauler[MAX_FIL][MAX_COL];
 
 };

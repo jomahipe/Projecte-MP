@@ -62,22 +62,11 @@ void Tauler::eliminaFila(int fila)
 
 }
 
-
-
-
-enum class CollisionType { 
-    NO_COLLISION, 
-    OUT_OF_BOUNDS, 
-    OVERLAP 
-};
-
-
-
 bool Tauler::posicioValida(Figura fig) {
     int novaFila = fig.getFila();
     int novaColumna = fig.getColumna();
-    const int figHeight = fig.getAlcada();
-    const int figWidth = fig.getAmplada();
+    int figHeight, figWidth;
+    fig.getValors(figHeight,figWidth);
     
     int figMatrix[figHeight][figWidth];
     fig.getMatriu(figMatrix);
@@ -88,7 +77,7 @@ bool Tauler::posicioValida(Figura fig) {
                 int filaTauler = novaFila + i;
                 int columnaTauler = novaColumna + j;
 
-                if (filaTauler < 0 || filaTauler >= MAX_ROW || columnaTauler < 0 || columnaTauler >= MAX_COL) {
+                if (filaTauler < 0 || filaTauler >= MAX_FIL || columnaTauler < 0 || columnaTauler >= MAX_COL) {
                     return false; // Out of bounds
                 }
 
@@ -104,8 +93,8 @@ bool Tauler::posicioValida(Figura fig) {
 bool Tauler::colisio(Figura fig) {
     int novaFila = fig.getFila();
     int novaColumna = fig.getColumna();
-    const int figHeight = fig.getAlcada();
-    const int figWidth = fig.getAmplada();
+    int figHeight, figWidth;
+    fig.getValors(figHeight, figWidth);
 
     int figMatrix[DIM_MAT][DIM_MAT];
     fig.getMatriu(figMatrix);
@@ -117,7 +106,7 @@ bool Tauler::colisio(Figura fig) {
                 int columnaTauler = novaColumna + j;
 
                 int filaBelow = filaTauler + 1;
-                if (filaBelow >= MAX_ROW || (filaBelow >= 0 && m_tauler[filaBelow][columnaTauler] != NO_COLOR)) {
+                if (filaBelow >= MAX_FIL || (filaBelow >= 0 && m_tauler[filaBelow][columnaTauler] != NO_COLOR)) {
                     return true; 
                 }
             }

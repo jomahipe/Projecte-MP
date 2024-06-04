@@ -55,13 +55,6 @@ if (m_tipusFigura != NO_FIGURA || m_color != NO_COLOR) {
 	m_amplada = aux;
 }
 
-void Figura::mouX(int dirX)
-{
-	m_columna += dirX;
-}
-
-
-
 void Figura::setGir(int gir)
 {
 	for (int i = 0; i < gir; i++)

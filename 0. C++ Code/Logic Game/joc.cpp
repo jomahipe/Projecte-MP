@@ -75,10 +75,10 @@ bool Joc::giraFigura(DireccioGir direccio)
 
 bool Joc::mouFigura(int dirX)
 {
-	m_figura.moure(dirX);
+	m_figura.mouX(dirX);
 	bool movValid = tauler.posicioValida(m_figura);
 	if (!movValid)
-		m_figura.moure(-dirX);
+		m_figura.mouX(-dirX);
 	return movValid;
 }
 

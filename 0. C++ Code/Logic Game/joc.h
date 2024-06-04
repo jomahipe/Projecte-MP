@@ -13,8 +13,7 @@ GIR_ANTI_HORARI
 class Joc
 {
 public:
-	//constructor
-	Joc();
+	
 	//interfície pública obligatòria 
 	void inicialitza(const string& nomFitxer);
 	void escriuTauler(const string& nomFitxer);
