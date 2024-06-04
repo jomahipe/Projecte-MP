@@ -1,10 +1,12 @@
 #pragma once
+#idndef CONSTANTS_H
+#define CONSTANTS_H
 #include "figura.h"
 //codi aqui
 
 const int MAX_FIL = 21;
-const int MAX_COL 11; 
-
+const int MAX_COL= 11; 
+/*el type enum struct a continuacio esta duplicat(poso barres per si decas)
 typedef enum
 {
 	COLOR_NEGRE = 0,
@@ -17,7 +19,7 @@ typedef enum
 	COLOR_VERD,
 	NO_COLOR
 } ColorFigura;
-
+*/a
 
 class Tauler
 {
