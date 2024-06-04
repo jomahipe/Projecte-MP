@@ -1,5 +1,6 @@
 #ifndef FIGURA_H
 #define FIGURA_H
+
 typedef enum {
 GIR_HORARI, 
 GIR_ANTI_HORARI, 

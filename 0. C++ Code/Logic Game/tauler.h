@@ -1,5 +1,6 @@
 #ifndef TAULER_H
 #define TAULER_H
+#include "figura.h"
 //codi aqui
 
 const int MAX_FILA = 21;
@@ -10,7 +11,7 @@ class Tauler
 {
 public:
 	Tauler();
-	void inicialitza(ColorFigura tauler); // constructor que inicialitza el tauler amb el que rep com a paràmetre
+	void inicialitza(int tauler[MAX_FILA][MAX_COL]); // constructor que inicialitza el tauler amb el que rep com a paràmetre
 	bool filaCompleta(int fila);
 	bool filaBuida(int fila);
 	void eliminaFila(int fila);

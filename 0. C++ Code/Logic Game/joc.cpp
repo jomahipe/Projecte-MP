@@ -16,10 +16,10 @@ void Joc::inicialitza(const string& nomFitxer)
 		m_figura.inicialitzaMatriu();
 		m_figura.setGir(girFig);
 		// la resta és el propi tauler
-		int taulerFitxer[MAX_FILES][MAX_COL];
-		for (int f = 0; f < MAX_FILES; f++)
+		int taulerFitxer[MAX_FILA][MAX_COL];
+		for (int f = 0; f < MAX_FILA; f++)
 		{
-			for (int c = 0; c < MAX_COLUMNES; c++)
+			for (int c = 0; c < MAX_COL; c++)
 				fitxer >> taulerFitxer[f][c];
 		}
 		m_tauler.inicialitza(taulerFitxer);
@@ -48,7 +48,7 @@ void Joc::escriuTauler(const string& nomFitxer)
 			m_tauler.escriuFigura(m_figura);
 		for (int f = 0; f < MAX_FILAES; f++)
 		{
-			for (int c = 0; c < MAX_COLUMNES; c++)
+			for (int c = 0; c < MAX_COL; c++)
 				fitxer << m_tauler.getValor(f, c);
 			fitxer << endl;
 		}
@@ -76,7 +76,7 @@ bool Joc::giraFigura(DireccioGir direccio)
 bool Joc::mouFigura(int dirX)
 {
 	m_figura.mouX(dirX);
-	bool movValid = tauler.posicioValida(m_figura);
+	bool movValid = m_tauler.posicioValida(m_figura);
 	if (!movValid)
 		m_figura.mouX(-dirX);
 	return movValid;

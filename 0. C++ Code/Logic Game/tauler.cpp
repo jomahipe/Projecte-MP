@@ -106,7 +106,7 @@ bool Tauler::colisio(Figura fig) {
                 int columnaTauler = novaColumna + j;
 
                 int filaBelow = filaTauler + 1;
-                if (filaBelow >= MAX_FIL || (filaBelow >= 0 && m_tauler[filaBelow][columnaTauler] != NO_COLOR)) {
+                if (filaBelow >= MAX_FILA || (filaBelow >= 0 && m_tauler[filaBelow][columnaTauler] != NO_COLOR)) {
                     return true; 
                 }
             }
