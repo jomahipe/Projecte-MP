@@ -1,6 +1,6 @@
 #ifndef TAULER_H
 #define TAULER_H
-#include "Figura.h"
+#include "figura.h"
 //codi aqui
 
 const int MAX_FILA = 21;

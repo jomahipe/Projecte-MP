@@ -1,7 +1,6 @@
 #ifndef FIGURA_H
 #define FIGURA_H
-#include "Joc.h"
-#include "Tauler.h"
+#include "tauler.h"
 typedef enum
 {
 GIR_HORARI = 0,
@@ -32,7 +31,6 @@ COLOR_VERMELL,
 COLOR_VERD,
 NO_COLOR
 } ColorFigura;
-
 const int DIM_MAT = 4;
 
 class Figura
