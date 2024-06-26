@@ -10,9 +10,17 @@ void Figura::inicialitza(TipusFigura tipus, int fila, int columna)
 void Figura::gira(DireccioGir gir) {
 	
 
-if (m_tipusFigura != NO_FIGURA || m_color != NO_COLOR) {
-		ColorFigura novaMatriu[DIM_MAT][DIM_MAT] = { NO_COLOR };
-		//tant com en el cas horari com anti horari em de fer la matriu transposada
+if (m_tipusFigura != NO_FIGURA && m_color != NO_COLOR) {
+		// nomes inicialtiza el primer element de la matriu a no_color : ColorFigura novaMatriu[DIM_MAT][DIM_MAT] = { NO_COLOR };
+		ColorFigura novMatriu[DIM_MAT][DIM_MAT];
+	for (int i =0;i<DIM_MAT;i++)
+		{
+			for (int j =0;j<DIM_MAT;j++){
+				novaMatriu[i][j]=NO_COLOR;
+			}
+		}
+	
+	//tant com en el cas horari com anti horari em de fer la matriu transposada
 		for (int i = 0; i < DIM_MAT; i++) {
 			for (int j = 0; j < DIM_MAT; j++) {
 				novaMatriu[j][i] = m_matriu[i][j];
