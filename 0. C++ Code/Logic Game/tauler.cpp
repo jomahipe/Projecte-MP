@@ -8,14 +8,13 @@ Tauler::Tauler()
             m_tauler[f][c] = NO_COLOR;
     }
 }
-void Tauler::inicialitza(ColorFigura tauler)
-{
-    for (int f = 0; f < MAX_COL; f++)
-    {
+void Tauler::inicialitza(ColorFigura tauler[MAX_FILA][MAX_COL]) {
+    for (int f = 0; f < MAX_FILA; f++) {
         for (int c = 0; c < MAX_COL; c++)
-            m_tauler[f][c] = ColorFigura(tauler[f][c]);
+            m_tauler[f][c] = tauler[f][c];
     }
 }
+
 
 
 bool Tauler::filaCompleta(int fila)
