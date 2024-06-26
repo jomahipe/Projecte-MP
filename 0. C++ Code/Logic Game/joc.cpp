@@ -3,28 +3,37 @@ using namespace std;
 
 void Joc::inicialitza(const string& nomFitxer)
 {
-	ifstream fitxer;
-	fitxer.open(nomFitxer);
-	if (fitxer.is_open())
-	{
-		// valors de figura que trobarem al fitxer
-			int filaFig, columnaFig, girFig, tipusFig;
+    ifstream fitxer;
+    fitxer.open(nomFitxer);
+    if (fitxer.is_open())
+    {
+        
+        int filaFig, columnaFig, girFig, tipusFig;
 
-		// la primera fila és el tipus de la figura, posició al tauler i orientació
-		fitxer >> tipusFig >> filaFig >> columnaFig >> girFig;
-		m_figura.inicialitza(TipusFigura(tipusFig), filaFig, columnaFig);
-		m_figura.inicialitzaMatriu();
-		m_figura.setGir(girFig);
-		// la resta és el propi tauler
-		int taulerFitxer[MAX_FILA][MAX_COL];
-		for (int f = 0; f < MAX_FILA; f++)
-		{
-			for (int c = 0; c < MAX_COL; c++)
-				fitxer >> taulerFitxer[f][c];
-		}
-		m_tauler.inicialitza(taulerFitxer);
-		fitxer.close();
-	}
+        
+        fitxer >> tipusFig >> filaFig >> columnaFig >> girFig;
+        m_figura.inicialitza(TipusFigura(tipusFig), filaFig, columnaFig);
+        m_figura.inicialitzaMatriu();
+        m_figura.setGir(girFig);
+
+        int taulerFitxer[MAX_FILA][MAX_COL];
+        for (int f = 0; f < MAX_FILA; f++)
+        {
+            for (int c = 0; c < MAX_COL; c++)
+                fitxer >> taulerFitxer[f][c];
+        }
+
+       
+        ColorFigura taulerConvertit[MAX_FILA][MAX_COL];
+        for (int f = 0; f < MAX_FILA; f++)
+        {
+            for (int c = 0; c < MAX_COL; c++)
+                taulerConvertit[f][c] = static_cast<ColorFigura>(taulerFitxer[f][c]);
+        }
+
+        m_tauler.inicialitza(taulerConvertit);
+        fitxer.close();
+    }
 }
 
 void Joc::escriuTauler(const string& nomFitxer)
