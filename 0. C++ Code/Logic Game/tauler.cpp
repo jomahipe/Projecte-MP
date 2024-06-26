@@ -31,6 +31,7 @@ bool Tauler::filaCompleta(int fila)
 		{
 			completa = false;
 		}
+		j++;
 	}
     out:
 	return completa;
@@ -43,6 +44,7 @@ bool Tauler::filaBuida(int fila)
     {
         if (m_tauler[fila][i] != 0)
             buida = false;
+	    i++;
     }
     return buida;
 }
@@ -68,7 +70,7 @@ bool Tauler::posicioValida(Figura fig) {
     fig.getValors(figHeight,figWidth);
 	
     
-    int figMatrix[DIM_MAT][DIM_MAT];
+    ColorFigura figMatrix[DIM_MAT][DIM_MAT];
     fig.getMatriu(figMatrix);
 
     for (int i = 0; i < DIM_MAT; ++i) {
