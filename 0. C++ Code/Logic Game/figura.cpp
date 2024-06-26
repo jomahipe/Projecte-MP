@@ -163,6 +163,8 @@ int Figura::getFilaInicial() const
 	else if (f == 2)
 		return (m_fila + 1);
 	//si f es otra cosa tenim un problema ...
+	//si no es compleix cap condicio, doncs retornem m_fila
+	return m_fila;
 }
 
 int Figura::getColInicial() const
